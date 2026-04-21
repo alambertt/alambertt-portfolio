@@ -1,17 +1,64 @@
 {
   "name": "alambertt-portfolio",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "rag:export": "bunx tsx --tsconfig tsconfig.app.json scripts/export-chunks.ts",
+    "rag:ingest": "bunx tsx --tsconfig tsconfig.app.json scripts/ingest-rag.ts",
+    "rag:sync": "bun run rag:export && bun run rag:ingest",
+    "build": "bun run rag:sync && bun run prompt:sync && bunx tsx --tsconfig tsconfig.app.json scripts/embed-evals.ts && bunx tsx --tsconfig tsconfig.app.json scripts/update-reddit-stats.ts && bunx tsx --tsconfig tsconfig.app.json scripts/update-github-stats.ts && bunx tsx --tsconfig tsconfig.app.json scripts/update-discord-stats.ts && bunx tsx --tsconfig tsconfig.app.json scripts/update-twitter-stats.ts && tsc -b && vite build && bunx tsx --tsconfig tsconfig.app.json scripts/generate-sitemap.ts && bunx tsx --tsconfig tsconfig.app.json scripts/validate-articles.ts && bunx tsx --tsconfig tsconfig.app.json scripts/validate-llms-txt.ts && bunx tsx --tsconfig tsconfig.app.json scripts/prerender.tsx && bunx tsx --tsconfig tsconfig.app.json scripts/validate-prerender.ts && bunx tsx --tsconfig tsconfig.app.json scripts/indexnow-ping.ts",
+    "validate-llms-txt": "bunx tsx --tsconfig tsconfig.app.json scripts/validate-llms-txt.ts",
+    "validate-articles": "bunx tsx --tsconfig tsconfig.app.json scripts/validate-articles.ts",
+    "validate-articles:fix": "bunx tsx --tsconfig tsconfig.app.json scripts/validate-articles.ts --fix",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "evals": "bunx tsx evals/runner.ts",
+    "evaluate-traces": "bunx tsx scripts/evaluate-traces.ts",
+    "prompt:sync": "bunx tsx scripts/sync-prompt-to-langfuse.ts",
+    "prompt:regression": "bunx tsx scripts/prompt-regression.ts",
+    "adversarial": "bunx tsx scripts/adversarial-test.ts",
+    "chats": "bunx tsx scripts/chats.ts",
+    "chats:tui": "bunx tsx scripts/chats-tui.ts",
+    "test:contract": "bunx tsx tests/ops-contract.test.ts",
+    "test:ops": "bunx tsx tests/ops-dashboard.test.ts",
+    "diagnose:rag": "bunx tsx scripts/diagnose-rag.ts"
   },
   "dependencies": {
-    "astro": "^6.1.8"
+    "@anthropic-ai/sdk": "^0.71.2",
+    "@supabase/supabase-js": "^2.99.1",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/functions": "^3.3.6",
+    "langfuse": "^3.38.6",
+    "lucide-react": "^0.563.0",
+    "motion": "^12.29.0",
+    "openai": "^6.27.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.12.0",
+    "recharts": "^3.8.0",
+    "resend": "^6.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "@vitejs/plugin-react-swc": "^4.2.3",
+    "critters": "^0.0.23",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "simple-icons": "^16.11.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   }
 }
