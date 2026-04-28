@@ -1,8 +1,8 @@
 /**
- * Auto-generates sitemap.xml from the article registry.
+ * Auto-generates sitemap.xml for the public portfolio pages.
  *
  * Runs as part of the build pipeline (after vite build, before prerender).
- * Ensures every registered article has proper <url> entries with hreflang.
+ * Keep legacy template articles out of the sitemap until they are migrated.
  *
  * Usage:
  *   npx tsx --tsconfig tsconfig.app.json scripts/generate-sitemap.ts
@@ -12,7 +12,6 @@ import { writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { articleRegistry } from '../src/articles/registry.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dist = resolve(__dirname, '..', 'dist')
@@ -68,7 +67,7 @@ function urlBlock(u: SitemapUrl): string {
 // Build URLs
 // ---------------------------------------------------------------------------
 
-const base = 'https://santifer.io'
+const base = 'https://www.alambertt.dev'
 const urls: SitemapUrl[] = []
 
 // Home ES + EN
@@ -106,37 +105,6 @@ urls.push({
   lastmod: aboutLastmod,
   priority: '0.9',
 })
-
-// Articles from registry
-for (const article of articleRegistry) {
-  const esUrl = `${base}/${article.slugs.es}`
-  const enUrl = `${base}/${article.slugs.en}`
-  const xDefault = `${base}/${article.xDefaultSlug ?? article.slugs.es}`
-
-  const articleLastmod = article.seoMeta?.dateModified ?? today
-
-  // ES version
-  urls.push({
-    loc: esUrl,
-    hreflangEs: esUrl,
-    hreflangEn: enUrl,
-    xDefault,
-    lastmod: articleLastmod,
-    priority: '0.8',
-  })
-
-  // EN version (skip if same slug — already covered)
-  if (article.slugs.en !== article.slugs.es) {
-    urls.push({
-      loc: enUrl,
-      hreflangEs: esUrl,
-      hreflangEn: enUrl,
-      xDefault,
-      lastmod: articleLastmod,
-      priority: '0.8',
-    })
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Write

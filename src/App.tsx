@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useReducer, useRef } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Users, Globe, Bot, Zap, Database, Layout, BadgeCheck, FolderGit2, Sparkles, Download, Github, Package, MessageSquare, Receipt, CalendarCheck, FileText, GitBranch, GitFork, Star, Network, Calendar, Percent, UserCheck, Image, TrendingUp, Timer, SkipForward, ThumbsUp, MessageCircle, Share2, ChevronRight, List, ArrowUp, Brain, Target, Inbox, Compass, GitMerge } from 'lucide-react'
+import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Users, Globe, Bot, Zap, Database, Layout, BadgeCheck, FolderGit2, Sparkles, Download, Github, Package, MessageSquare, Receipt, CalendarCheck, FileText, GitBranch, GitFork, Star, Network, Calendar, Percent, UserCheck, Image, TrendingUp, Timer, SkipForward, ThumbsUp, MessageCircle, Share2, ChevronRight, List, ArrowUp, Brain, Target, Inbox, Compass, GitMerge, CheckCircle } from 'lucide-react'
 import { translations, seo, type Lang } from './i18n'
 import { useHomeSeo } from './articles/use-article-seo'
 import { getTechIcon } from './tech-icons'
@@ -13,6 +13,10 @@ function LinkedInLogo({ className = "w-4 h-4" }: { className?: string }) {
       <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
     </svg>
   )
+}
+
+function externalHref(url: string) {
+  return /^https?:\/\//.test(url) ? url : `https://${url}`
 }
 
 function useHydrated() {
@@ -41,43 +45,6 @@ function useInView(threshold = 0.1) {
   }, [ref, threshold])
 
   return { ref: setRef, isInView }
-}
-
-const HEAL_PARTICLES = [
-  { char: '+', left: '10%', delay: '0s', dur: '2.8s', size: '24px' },
-  { char: '·', left: '30%', delay: '0.6s', dur: '2.2s', size: '20px' },
-  { char: '✦', left: '55%', delay: '1.2s', dur: '3s', size: '18px' },
-  { char: '0', left: '75%', delay: '0.3s', dur: '2.5s', size: '22px' },
-  { char: '+', left: '90%', delay: '1.8s', dur: '2.6s', size: '20px' },
-  { char: '1', left: '20%', delay: '2.1s', dur: '2.4s', size: '22px' },
-  { char: '·', left: '65%', delay: '0.9s', dur: '3.2s', size: '18px' },
-  { char: '✦', left: '45%', delay: '1.5s', dur: '2.7s', size: '20px' },
-]
-
-function BeamPill({ children }: { children: React.ReactNode }) {
-  const hydrated = useHydrated()
-  return (
-    <span className={`relative inline-block pl-0 pr-0 ${hydrated ? 'beam-pill' : ''}`}>
-      <span className="relative z-10">{children}</span>
-      {hydrated && HEAL_PARTICLES.map((p, i) => (
-        <span
-          key={i}
-          className="absolute pointer-events-none select-none"
-          style={{
-            left: p.left,
-            bottom: '50%',
-            fontSize: p.size,
-            color: '#4ade80',
-            opacity: 0,
-            animation: `heal-float ${p.dur} ease-out ${p.delay} infinite`,
-          }}
-          aria-hidden="true"
-        >
-          {p.char}
-        </span>
-      ))}
-    </span>
-  )
 }
 
 // Inject animation styles once (avoids hydration mismatch from inline <style> in h1)
@@ -1435,7 +1402,7 @@ function App() {
   const t = translations[lang]
   const hydrated = useHydrated()
   useHeroStyles()
-  const { displayText: roleText, roleIndex } = useTypewriterRotation(t.greetingRoles)
+  const { displayText: roleText } = useTypewriterRotation(t.greetingRoles)
 
 
   // SEO: Dynamic meta tags based on language
@@ -1478,7 +1445,13 @@ function App() {
                 {/* Inner border */}
                 <div className="absolute inset-2 rounded-full bg-gradient-theme-50 p-[2px]">
                   <div className="w-full h-full rounded-full overflow-hidden">
-                    <img src="/foto-avatar-sm.webp" srcSet="/foto-avatar-sm.webp 192w, /foto-avatar.webp 384w" sizes="(max-width: 768px) 160px, 192px" alt="Santiago Fernández de Valderrama" className="w-full h-full object-cover" width={192} height={192} fetchPriority="high" />
+                    <img
+                      src="/angel-avatar.webp"
+                      alt="Angel Lambertt"
+                      width={384}
+                      height={384}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -1499,20 +1472,13 @@ function App() {
               className="text-center md:text-left"
             >
               <p className="text-lg text-muted-foreground mb-2">
-                {lang === 'es' ? 'Hola, soy' : "Hi, I'm"} <Link to={lang === 'es' ? '/sobre-mi' : '/about'} className="text-gradient-theme font-semibold hover:opacity-80 transition-opacity">@santifer</Link>,
+                {lang === 'es' ? 'Hola, soy' : "Hi, I'm"} <Link to={lang === 'es' ? '/sobre-mi' : '/about'} className="text-gradient-theme font-semibold hover:opacity-80 transition-opacity">Angel Lambertt</Link>,
               </p>
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
                 <span className="text-gradient-theme">{hydrated ? roleText : t.greetingRoles[0]}</span>
-                {hydrated && roleIndex === 2 && roleText.includes('career-ops') && (
-                  <a href="https://github.com/santifer/career-ops" target="_blank" rel="noopener noreferrer" aria-label="career-ops on GitHub" className="inline-flex items-center ml-2 text-primary hover:opacity-80 transition-opacity align-middle">
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 md:w-7 md:h-7" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                  </a>
-                )}
                 {hydrated && <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 rounded-sm translate-y-[2px]" style={{ animation: 'blink 1s step-end infinite' }} />}
                 <br />
                 {t.greeting}
-                <br />
-                {lang === 'es' ? 'con ' : 'with '}<BeamPill>HITL <span className="opacity-60">+</span> MCP <span className="opacity-60">+</span> RAG</BeamPill>
               </h1>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
@@ -1520,7 +1486,7 @@ function App() {
                   <span
                     key={label}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
-                      hydrated && i === roleIndex
+                      hydrated && t.greetingRoles[i] === roleText
                         ? 'border border-[#20d6ee] bg-[#20d6ee]/15 text-foreground scale-105'
                         : 'border border-[#20d6ee]/30 bg-background/80 text-muted-foreground'
                     }`}
@@ -1528,21 +1494,17 @@ function App() {
                     {label}
                   </span>
                 ))}
-                <Link
-                  to={lang === 'es' ? '/career-ops' : '/career-ops-system'}
+                <a
+                  href="#projects"
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
-                    hydrated && roleIndex === 2
+                    hydrated && roleText === t.greetingRoles[2]
                       ? 'border border-[#20d6ee] bg-[#20d6ee]/15 text-foreground scale-105'
                       : 'border border-[#20d6ee]/30 bg-background/80 text-muted-foreground'
                   }`}
                 >
                   <Github className="w-3.5 h-3.5" />
-                  <span>career-ops</span>
-                  <Star className="w-3 h-3 text-yellow-500" />
-                  {/* hero-stats:career-ops:stars */}<span className="font-medium">37.3K</span>
-                  <GitFork className="w-3 h-3" />
-                  {/* hero-stats:career-ops:forks */}<span>7.6K</span>
-                </Link>
+                  <span>AWS · React · Python · AI</span>
+                </a>
               </div>
 
             </motion.div>
@@ -1589,38 +1551,64 @@ function App() {
             </div>
           </AnimatedSection>
 
-          {/* Zinkee */}
+          {/* Current role */}
           <AnimatedSection delay={0.1}>
             <div className="mb-12">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
-                  <img src="/zinkee-logo.webp" alt="Zinkee" className="w-10 h-10 shrink-0" width={40} height={40} loading="lazy" decoding="async" />
+                  <div className="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center font-display font-bold shrink-0">A</div>
                   <h3 className="font-display text-2xl font-bold">{t.experience.zinkee.company}</h3>
                 </div>
                 <span className="text-sm text-muted-foreground">{t.experience.zinkee.location}</span>
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.zinkee.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.zinkee.period}</p>
-              <p className="text-muted-foreground whitespace-pre-line">{t.experience.zinkee.desc}</p>
+              <p className="text-muted-foreground whitespace-pre-line mb-5">{t.experience.zinkee.desc}</p>
+              <div className="grid md:grid-cols-2 gap-3 mb-5">
+                {t.experience.zinkee.platforms.map((platform) => (
+                  <div key={platform.name} className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="font-display font-semibold text-foreground">{platform.name}</p>
+                      {'link' in platform && platform.link && (
+                        <a
+                          href={externalHref(platform.link)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${platform.name} landing page`}
+                          className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-primary hover:bg-primary/10 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                        </a>
+                      )}
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{platform.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <ul className="grid md:grid-cols-2 gap-x-6 gap-y-2">
+                {t.experience.zinkee.highlights.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </AnimatedSection>
 
-          {/* Santifer iRepair - Bento Grid */}
+          {/* Founder / product work - Bento Grid */}
           <AnimatedSection delay={0.1}>
             <div className="mb-12">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#888] shrink-0">
-                    <picture>
-                      <source srcSet="/logo-santifer.webp" type="image/webp" />
-                      <img src="/logo-santifer.jpg" alt={t.experience.santifer.company} className="w-full h-full object-cover" width={40} height={40} loading="lazy" decoding="async" />
-                    </picture>
+                    <span className="w-full h-full bg-primary/15 text-primary flex items-center justify-center font-display font-bold">R</span>
                   </div>
                   <h3 className="font-display text-2xl font-bold">{t.experience.santifer.company}</h3>
                 </div>
-                <Link to={lang === 'en' ? '/santifer-irepair-founder' : '/santifer-irepair'} className="text-sm text-primary hover:underline flex items-center gap-1">
-                  santifer irepair
-                </Link>
+                <a href="#projects" className="text-sm text-primary hover:underline flex items-center gap-1">
+                  projects
+                </a>
                 <span className="text-sm text-muted-foreground">{t.experience.santifer.location}</span>
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.santifer.role}</p>
@@ -1641,9 +1629,9 @@ function App() {
                   {t.experience.santifer.trustedBy.logos.map((logo, i) => (
                     <div key={i} className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
                       {'src' in logo ? (
-                        <img src={logo.src} alt={logo.name} className="h-5 w-auto shrink-0 invert opacity-60 hover:opacity-80 dark:invert-0 dark:opacity-70 dark:hover:opacity-90" loading="lazy" width={20} height={20} />
+                        <img src={String(logo.src)} alt={logo.name} className="h-5 w-auto shrink-0 invert opacity-60 hover:opacity-80 dark:invert-0 dark:opacity-70 dark:hover:opacity-90" loading="lazy" width={20} height={20} />
                       ) : (
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0 opacity-60 dark:opacity-70" aria-hidden="true" dangerouslySetInnerHTML={{ __html: logo.icon }} />
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0 opacity-60 dark:opacity-70" aria-hidden="true" dangerouslySetInnerHTML={{ __html: String(logo.icon) }} />
                       )}
                       <span className="text-sm font-medium opacity-60 dark:opacity-70">{logo.name}</span>
                     </div>
@@ -1876,22 +1864,17 @@ function App() {
             </AnimatedSection>
           </div>
 
-          {/* LICO Cosmetics */}
+          {/* SkillMil */}
           <AnimatedSection delay={0.5} className="mt-16">
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#F5F3EE] flex items-center justify-center shrink-0">
-                    <picture>
-                      <source srcSet="/logo-lico.webp" type="image/webp" />
-                      <img src="/logo-lico.png" alt={t.experience.lico.company} className="w-full h-full object-contain p-1" width={40} height={40} loading="lazy" decoding="async" />
-                    </picture>
+                    <span className="w-full h-full bg-accent/15 text-accent flex items-center justify-center font-display font-bold">S</span>
                   </div>
                   <h3 className="font-display text-2xl font-bold">{t.experience.lico.company}</h3>
                 </div>
-                <a href="https://licocosmetics.es" target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-accent hover:underline flex items-center gap-1">
-                  licocosmetics.es <ExternalLink className="w-3 h-3" aria-hidden="true" />
-                </a>
+                <span className="text-sm text-accent">workforce platform</span>
                 <span className="text-sm text-muted-foreground">{t.experience.lico.location}</span>
               </div>
               <p className="text-accent font-medium mb-1">{t.experience.lico.role}</p>
@@ -1899,16 +1882,13 @@ function App() {
               <p className="text-muted-foreground">{t.experience.lico.desc}</p>
 
               {/* Testimonial */}
-              <a href="https://www.linkedin.com/in/santifer/details/recommendations/" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="block group">
                 <blockquote className="mt-6 p-4 rounded-xl bg-accent/5 border border-accent/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
                   <p className="text-sm text-muted-foreground italic mb-4">
                     "{t.experience.lico.testimonial.quote}"
                   </p>
                   <footer className="flex items-center gap-3">
-                    <picture>
-                      <source srcSet="/juan-sabate.webp" type="image/webp" />
-                      <img src="/juan-sabate.jpeg" alt={t.experience.lico.testimonial.author} className="w-10 h-10 rounded-full object-cover" width={40} height={40} loading="lazy" decoding="async" />
-                    </picture>
+                    <div className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center font-display font-bold">AL</div>
                     <div className="flex-1">
                       <span className="text-sm font-medium text-foreground block">{t.experience.lico.testimonial.author}</span>
                       <span className="text-xs text-muted-foreground">{t.experience.lico.testimonial.role}</span>
@@ -1916,20 +1896,17 @@ function App() {
                     <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />
                   </footer>
                 </blockquote>
-              </a>
+              </div>
             </div>
           </AnimatedSection>
 
-          {/* Everis */}
+          {/* Targeted Bioscience */}
           <AnimatedSection delay={0.6} className="mt-16">
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl overflow-hidden bg-white flex items-center justify-center shrink-0 p-1.5">
-                    <picture>
-                      <source srcSet="/logo-everis.webp" type="image/webp" />
-                      <img src="/logo-everis.jpg" alt={t.experience.everis.company} className="w-full h-full object-contain" width={40} height={40} loading="lazy" decoding="async" />
-                    </picture>
+                    <span className="w-full h-full bg-primary/15 text-primary flex items-center justify-center font-display font-bold">T</span>
                   </div>
                   <h3 className="font-display text-2xl font-bold">{t.experience.everis.company}</h3>
                 </div>
@@ -1951,16 +1928,13 @@ function App() {
             </div>
 
             {/* Testimonial */}
-            <a href="https://www.linkedin.com/in/santifer/details/recommendations/" target="_blank" rel="noopener noreferrer" className="block group">
+            <div className="block group">
               <blockquote className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
                 <p className="text-sm text-muted-foreground italic mb-4">
                   "{t.experience.everis.testimonial.quote}"
                 </p>
                 <footer className="flex items-center gap-3">
-                  <picture>
-                    <source srcSet="/manuel-lopez.webp" type="image/webp" />
-                    <img src="/manuel-lopez.jpeg" alt={t.experience.everis.testimonial.author} className="w-10 h-10 rounded-full object-cover" width={40} height={40} loading="lazy" decoding="async" />
-                  </picture>
+                  <div className="w-10 h-10 rounded-full bg-primary/15 text-primary flex items-center justify-center font-display font-bold">AL</div>
                   <div className="flex-1">
                     <span className="text-sm font-medium text-foreground block">{t.experience.everis.testimonial.author}</span>
                     <span className="text-xs text-muted-foreground">{t.experience.everis.testimonial.role}</span>
@@ -1968,7 +1942,7 @@ function App() {
                   <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />
                 </footer>
               </blockquote>
-            </a>
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -2090,6 +2064,11 @@ function App() {
               badge: string
               badgeBuilding: string
               desc: string
+              subprojects?: readonly {
+                name: string
+                desc: string
+                link?: string
+              }[]
               tech: readonly string[]
               link: string
               isDependency?: boolean
@@ -2102,17 +2081,15 @@ function App() {
 
             // Separar proyectos
             const allProjects = t.projects.items as readonly Project[]
-            const contentDigest = allProjects.find(p => p.title === 'Content Digest')!
-            const lifeOS = allProjects.find(p => p.title === 'Life OS')!
-            const careerOps = allProjects.find(p => p.title === 'Career Ops')!
-            const santiferIo = allProjects.find(p => p.title === 'santifer.io')!
-            const selfHealingChatbot = allProjects.find(p => p.title === 'Self-Healing Chatbot')!
-            // Tools que dependen de santifer.io
-            const claudeEye = allProjects.find(p => p.title === 'Claude Eye')!
-            const claudeable = allProjects.find(p => p.title === 'Claudeable')!
-            // Fila 4: Claude Pulse + ProjectOS Predict
-            const claudePulse = allProjects.find(p => p.title === 'Claude Pulse')!
-            const projectOSPredict = allProjects.find(p => p.title === 'ProjectOS Predict')!
+            const contentDigest = allProjects.find(p => p.title === 'Argus Enterprises Serv Group')!
+            const lifeOS = allProjects.find(p => p.title === 'Relampo SaaS Platform')!
+            const careerOps = allProjects.find(p => p.title === 'Recruiting Platform Features')!
+            const santiferIo = allProjects.find(p => p.title === 'Angel Portfolio')!
+            const selfHealingChatbot = allProjects.find(p => p.title === 'Diagnostic Workflow Tools')!
+            // Tools that depend on the portfolio surface
+            const claudeEye = allProjects.find(p => p.title === 'Cloud Backend Work')!
+            const claudeable = allProjects.find(p => p.title === 'Internal Operations Systems')!
+            const claudePulse = allProjects.find(p => p.title === 'Smart Greenhouse Platform')!
 
             // Helper para parsear **bold** a elementos con estilo
             const parseBold = (text: string): React.ReactNode[] => {
@@ -2132,7 +2109,6 @@ function App() {
               claudeEye: useRef<HTMLDivElement>(null),
               claudeable: useRef<HTMLDivElement>(null),
               claudePulse: useRef<HTMLDivElement>(null),
-              projectOSPredict: useRef<HTMLDivElement>(null),
             }
 
             // Hook para calcular líneas de conexión SVG
@@ -2181,15 +2157,14 @@ function App() {
                   { from: cardRefs.claudeEye, fromEdge: 'bottom', to: cardRefs.claudeable, toEdge: 'top' },
                   { from: cardRefs.claudeable, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
                   { from: cardRefs.claudePulse, fromEdge: 'bottom', to: cardRefs.contentDigest, toEdge: 'top' },
-                  { from: cardRefs.contentDigest, fromEdge: 'bottom', to: cardRefs.projectOSPredict, toEdge: 'top' },
                 ] : [
                   // Desktop: grafo complejo
                   // Fila 1: Life OS ↔ Career Ops (horizontal)
                   { from: cardRefs.lifeOS, fromEdge: 'right', to: cardRefs.careerOps, toEdge: 'left' },
-                  // Fila 1 → Fila 2: diagonales hacia santifer.io + chatbot
+                  // Row 1 -> Row 2: diagonals toward portfolio + chatbot
                   { from: cardRefs.lifeOS, fromEdge: 'bottom', to: cardRefs.santiferIo, toEdge: 'top' },
                   { from: cardRefs.careerOps, fromEdge: 'bottom', to: cardRefs.selfHealingChatbot, toEdge: 'top' },
-                  // Fila 2: santifer.io ↔ chatbot (horizontal)
+                  // Row 2: portfolio <-> chatbot (horizontal)
                   { from: cardRefs.santiferIo, fromEdge: 'right', to: cardRefs.selfHealingChatbot, toEdge: 'left' },
                   // Fila 2 → Fila 3: hacia tools
                   { from: cardRefs.santiferIo, fromEdge: 'bottom', to: cardRefs.claudeEye, toEdge: 'top' },
@@ -2197,9 +2172,6 @@ function App() {
                   // Fila 3 → Fila 4
                   { from: cardRefs.claudeEye, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
                   { from: cardRefs.claudeable, fromEdge: 'bottom', to: cardRefs.contentDigest, toEdge: 'top' },
-                  // Fila 4 → Fila 5: diagonales hacia ProjectOS
-                  { from: cardRefs.claudePulse, fromEdge: 'bottom', to: cardRefs.projectOSPredict, toEdge: 'top', toRatio: 0.25 },
-                  { from: cardRefs.contentDigest, fromEdge: 'bottom', to: cardRefs.projectOSPredict, toEdge: 'top', toRatio: 0.75 },
                 ]
 
                 const paths = connections.map(conn => {
@@ -2289,6 +2261,34 @@ function App() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {parseBold(project.desc)}
                   </p>
+                  {project.subprojects && (
+                    <div className="grid gap-2 mb-4">
+                      {project.subprojects.map((subproject) => (
+                        <div
+                          key={subproject.name}
+                          className="rounded-lg border border-border/70 bg-background/45 px-3 py-2"
+                        >
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-sm font-semibold text-foreground">{subproject.name}</p>
+                            {subproject.link && (
+                              <a
+                                href={externalHref(subproject.link)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`${subproject.name} landing page`}
+                                className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-primary hover:bg-primary/10 transition-colors"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                              </a>
+                            )}
+                          </div>
+                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                            {subproject.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span key={tech} className={`px-2 py-1 rounded-md text-xs ${
@@ -2311,7 +2311,7 @@ function App() {
                     {project.link && (
                       <div className="flex items-center gap-3">
                         <a
-                          href={`https://${project.link}`}
+                          href={externalHref(project.link)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`inline-flex items-center gap-2 text-xs ${
@@ -2384,7 +2384,7 @@ function App() {
                   </AnimatedSection>
                 </div>
 
-                {/* Fila 2: santifer.io + Self-Healing Chatbot (highlight) */}
+                {/* Row 2: portfolio + Self-Healing Chatbot (highlight) */}
                 <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
                   <AnimatedSection delay={0.2}>
                     <ProjectCard project={santiferIo} variant="highlight" cardRef={cardRefs.santiferIo} />
@@ -2411,13 +2411,6 @@ function App() {
                   </AnimatedSection>
                   <AnimatedSection delay={0.4}>
                     <ProjectCard project={contentDigest} cardRef={cardRefs.contentDigest} />
-                  </AnimatedSection>
-                </div>
-
-                {/* Fila 5: ProjectOS Predict (full width) */}
-                <div className="relative z-10">
-                  <AnimatedSection delay={0.45}>
-                    <ProjectCard project={projectOSPredict} cardRef={cardRefs.projectOSPredict} />
                   </AnimatedSection>
                 </div>
               </div>
@@ -2492,16 +2485,16 @@ function App() {
                 >
                   {/* Santiago — two column layout like Garry Tan */}
                   <div className="flex gap-4 mb-8">
-                    <img src="/foto-avatar.webp" alt="santifer" role="presentation" width={384} height={384} className="w-16 h-16 md:w-20 md:h-20 rounded-full shrink-0" />
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full shrink-0 bg-gradient-theme text-white flex items-center justify-center font-display font-bold text-xl md:text-2xl">AL</div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap mb-1">
-                        <span className="text-base md:text-lg font-bold text-foreground">santifer | AI Builder</span>
+                        <span className="text-base md:text-lg font-bold text-foreground">Angel Lambertt | Full Stack Engineer</span>
                         <svg viewBox="0 0 22 22" className="w-5 h-5 text-[#1d9bf0] shrink-0" fill="currentColor"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.855-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.69-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.636.433 1.221.878 1.69.47.446 1.055.752 1.69.883.635.13 1.294.083 1.902-.143.271.586.702 1.084 1.24 1.438.54.354 1.167.551 1.813.568.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.225 1.261.272 1.893.143.636-.131 1.221-.437 1.69-.883.445-.47.751-1.054.882-1.69.132-.633.083-1.29-.14-1.898.587-.273 1.084-.704 1.438-1.244.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"/></svg>
                         <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0 ml-auto" fill="currentColor" opacity={0.4}>
                           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-3">@santifer</p>
+                      <p className="text-sm text-muted-foreground mb-3">Jupiter, Florida</p>
                       <p className="text-base md:text-lg text-foreground leading-relaxed">{t.xPost.hook}</p>
                       <p className="text-base md:text-lg text-foreground mt-1">{t.xPost.hookLinkPrefix}<span className="text-[#1d9bf0]">{t.xPost.hookLinkUrl}</span></p>
                     </div>
@@ -2602,7 +2595,7 @@ function App() {
                   className="flex flex-col p-5 rounded-2xl bg-card border border-border/50 border-t-2 border-t-[#FF4500] hover:border-border transition-colors group h-full"
                 >
                   <div className="flex gap-3">
-                    <img src="/foto-avatar.webp" alt="" role="presentation" width={384} height={384} className="w-10 h-10 rounded-full shrink-0 mt-0.5" />
+                    <div className="w-10 h-10 rounded-full shrink-0 mt-0.5 bg-gradient-theme text-white flex items-center justify-center font-display font-bold text-xs">AL</div>
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
                         <p className="text-sm text-foreground leading-relaxed">{rp.hook}<span className="text-muted-foreground">...</span> <span className="text-[#FF4500] group-hover:text-[#FF4500] transition-colors">ver más</span></p>
@@ -2646,7 +2639,7 @@ function App() {
                   className="flex flex-col p-5 rounded-2xl bg-card border border-border/50 border-t-2 border-t-[hsl(var(--linkedin))] hover:border-border transition-colors group h-full"
                 >
                   <div className="flex gap-3 flex-1">
-                    <img src="/foto-avatar.webp" alt="" role="presentation" width={384} height={384} className="w-10 h-10 rounded-full shrink-0 mt-0.5" />
+                    <img src="/angel-avatar-sm.webp" alt="" role="presentation" width={384} height={384} className="w-10 h-10 rounded-full shrink-0 mt-0.5" />
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
                         <p className="text-sm text-foreground leading-relaxed">{post.hook}<span className="text-muted-foreground">...</span> <span className="text-[hsl(var(--linkedin))] group-hover:text-[hsl(var(--linkedin))] transition-colors">ver más</span></p>
@@ -2790,7 +2783,22 @@ function App() {
               </AnimatedSection>
 
               <div className="space-y-4">
-                {t.education.items.map((item, i) => (
+                {t.education.items.map((rawItem, i) => {
+                  const item = rawItem as {
+                    year: string
+                    org: string
+                    title: string
+                    desc: string
+                    projectLink?: string
+                    projectLabel?: string
+                    testimonial?: {
+                      quote: string
+                      photo: string
+                      author: string
+                      role: string
+                    } | null
+                  }
+                  return (
                   <AnimatedSection key={i} delay={0.1 + i * 0.1}>
                     <div className="p-5 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors duration-200 group">
                       <div className="flex items-start justify-between">
@@ -2818,7 +2826,7 @@ function App() {
                       </div>
                       {/* Testimonial if exists */}
                       {'testimonial' in item && item.testimonial && (
-                        <a href="https://www.linkedin.com/in/santifer/details/recommendations/" target="_blank" rel="noopener noreferrer" className="block group">
+                        <div className="block group">
                           <blockquote className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
                             <p className="text-sm text-muted-foreground italic mb-4">
                               "{item.testimonial.quote}"
@@ -2835,11 +2843,12 @@ function App() {
                               <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />
                             </footer>
                           </blockquote>
-                        </a>
+                        </div>
                       )}
                     </div>
                   </AnimatedSection>
-                ))}
+                  )
+                })}
 
               </div>
             </div>
@@ -2979,7 +2988,7 @@ function App() {
                 {t.cta.contact}
               </a>
               <a
-                href="https://linkedin.com/in/santifer/"
+                href="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
@@ -2991,7 +3000,7 @@ function App() {
             </div>
           </AnimatedSection>
           <p className="mt-12 text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Santiago Fernández de Valderrama
+            &copy; {new Date().getFullYear()} Angel Lambertt
             <span className="mx-2 text-border">|</span>
             <Link to={lang === 'es' ? '/privacidad' : '/privacy'} className="hover:text-primary transition-colors">
               {lang === 'es' ? 'Privacidad' : 'Privacy'}

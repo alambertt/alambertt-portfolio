@@ -131,7 +131,7 @@ export default function SantiferIRepair({ lang }: { lang: IRepairLang }) {
         <div className="bg-card border border-border rounded-xl overflow-hidden grid grid-rows-[auto_1fr_auto]">
           <div className="flex items-center gap-4 p-6 pb-0">
             <img
-              src="/foto-avatar-sm.webp"
+              src="/angel-avatar-sm.webp"
               alt="Santiago Fernández de Valderrama"
               className="w-16 h-16 rounded-full border-2 border-primary/20 shrink-0"
               width={64}

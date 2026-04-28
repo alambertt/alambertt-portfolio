@@ -207,7 +207,6 @@ export default async function handler(req) {
           },
         ]
 
-        // Stream the final response (with fallback if streaming fails)
         return streamResponse({
           systemBlocks,
           messages: messagesWithTool,
@@ -233,7 +232,6 @@ export default async function handler(req) {
         })
       }
 
-      // Claude didn't use tool — stream the response we already have
       return streamResponse({
         systemBlocks,
         messages: cleanMessages,

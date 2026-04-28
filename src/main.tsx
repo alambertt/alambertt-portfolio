@@ -12,6 +12,7 @@ const MusicToggle = lazy(() => import('./MusicToggle'))
 const OpsDashboard = lazy(() => import('./ops/OpsDashboard'))
 const PrivacyPolicy = lazy(() => import('./PrivacyPolicy'))
 const AboutPage = lazy(() => import('./AboutPage'))
+const ENABLE_FLOATING_CHAT = false
 
 // Lazy-load article components from registry
 const articleComponents: Record<string, React.LazyExoticComponent<ComponentType<{ lang: 'es' | 'en' }>>> = {}
@@ -110,19 +111,17 @@ console.log(`%c${ASCII_ART}`, 'color: #f97316; font-size: 12px; font-family: mon
 console.log('%c Most people scroll. You inspect. I like that. ', 'background: #f97316; color: #1a1a1a; font-size: 14px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
 console.log('%cThe %cbest %cwork %cis %cinvisible.', 'color: #94a3b8; font-size: 13px;', 'color: #7e8d9d; font-size: 13px;', 'color: #687882; font-size: 13px;', 'color: #526268; font-size: 13px;', 'color: #3d4d52; font-size: 13px;')
 console.log('%cYou just found some of it.', 'color: #94a3b8; font-size: 13px;')
-console.log('%c I build the details. Let\'s solve something hard → hi@santifer.io ', 'background: #f97316; color: #1a1a1a; font-size: 13px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
+console.log('%c I build the details. Let\'s solve something hard → alambertt1991@icloud.com ', 'background: #f97316; color: #1a1a1a; font-size: 13px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
 
-// Debug API for technical recruiters — type window.__santifer in console
-Object.defineProperty(window, '__santifer', {
+// Debug API for technical recruiters — type window.__alambertt in console
+Object.defineProperty(window, '__alambertt', {
   value: Object.freeze({
     stack: 'React 19 + TypeScript + Vite + Tailwind v4 + Motion',
-    llm: 'claude-sonnet-4-5 (streaming SSE)',
-    security: '6-layer defense (keywords, canary, fingerprint, anti-extraction, online scoring, adversarial)',
-    evals: '71 automated (factual, persona, safety, RAG, multilingual, multi-turn, source badges, voice)',
-    observability: 'Langfuse (traces, LLM-as-Judge, intent tags)',
+    focus: 'Full-stack product engineering, AWS/CDK infrastructure, and applied AI',
+    cloud: 'AWS + Google Cloud Platform + serverless architecture',
     render: 'Pre-rendered HTML + critical CSS inlined + client hydration',
     perf: () => { const n = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming; console.table({ TTFB: `${Math.round(n.responseStart - n.requestStart)}ms`, DOMContentLoaded: `${Math.round(n.domContentLoadedEventEnd - n.startTime)}ms`, Load: `${Math.round(n.loadEventEnd - n.startTime)}ms` }); },
-    hire_me: 'hola@santifer.io',
+    hire_me: 'alambertt1991@icloud.com',
   }),
   configurable: false,
 })
@@ -135,7 +134,7 @@ function NotFound() {
     let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement
     if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.appendChild(robots) }
     robots.content = 'noindex, nofollow'
-    document.title = '404 — Page not found | santifer.io'
+    document.title = '404 — Page not found | alambertt.dev'
     return () => { robots.content = 'index, follow' }
   }, [])
 
@@ -186,7 +185,8 @@ const app = (
           </Routes>
         </Suspense>
       </PageTransition>
-      <GlobalChat />
+      {/* Floating chat disabled until Angel-specific integration is ready. */}
+      {ENABLE_FLOATING_CHAT && <GlobalChat />}
       <GlobalMusic />
       <Analytics />
     </BrowserRouter>

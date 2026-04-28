@@ -105,7 +105,7 @@ export function ArticleHeader({
   authorName = 'Santiago Fernández de Valderrama',
   authorUrl,
   authorBio,
-  avatarSrc = '/foto-avatar-sm.webp',
+  avatarSrc = '/angel-avatar-sm.webp',
   lang,
 }: ArticleHeaderProps) {
   const resolvedAuthorUrl = authorUrl ?? (lang === 'es' ? '/sobre-mi' : '/about')
@@ -194,7 +194,7 @@ export function ArticleFooter({ lang, utmCampaign }: ArticleFooterProps) {
     <footer className="mt-16 pt-8 border-t border-border">
       <div className="flex items-start gap-3 mb-6">
         <img
-          src="/foto-avatar-sm.webp"
+          src="/angel-avatar-sm.webp"
           alt="Santiago Fernández de Valderrama"
           className="w-12 h-12 rounded-full shrink-0"
           width={48}

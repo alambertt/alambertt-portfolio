@@ -4,17 +4,11 @@ import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRig
 import { aboutContent, type AboutLang } from './about-i18n'
 
 const SOCIAL_LINKS = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/santifer' },
-  { name: 'GitHub', url: 'https://github.com/santifer' },
-  { name: 'YouTube', url: 'https://www.youtube.com/@santifer_io' },
-  { name: 'X / Twitter', url: 'https://x.com/santifer' },
-  { name: 'Dev.to', url: 'https://dev.to/santifer' },
-  { name: 'Substack', url: 'https://santifer.substack.com' },
-  { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/32541743' },
-  { name: 'ORCID', url: 'https://orcid.org/0009-0006-2192-7210' },
-  { name: 'Crunchbase', url: 'https://www.crunchbase.com/person/santiago-fernandez-de-valderrama' },
-  { name: 'Wikidata', url: 'https://www.wikidata.org/wiki/Q138710224' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9' },
+  { name: 'GitHub', url: 'https://github.com/alambertt' },
 ]
+
+const SITE_URL = 'https://www.alambertt.dev'
 
 export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
   const t = aboutContent[lang]
@@ -30,12 +24,12 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
 
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical) }
-    canonical.href = `https://santifer.io/${t.slug}`
+    canonical.href = `${SITE_URL}/${t.slug}`
 
     const hreflangs = [
-      { lang: 'es', href: 'https://santifer.io/sobre-mi' },
-      { lang: 'en', href: 'https://santifer.io/about' },
-      { lang: 'x-default', href: 'https://santifer.io/sobre-mi' },
+      { lang: 'es', href: `${SITE_URL}/sobre-mi` },
+      { lang: 'en', href: `${SITE_URL}/about` },
+      { lang: 'x-default', href: `${SITE_URL}/sobre-mi` },
     ]
     document.querySelectorAll('link[hreflang]').forEach(el => el.remove())
     for (const hl of hreflangs) {
@@ -51,84 +45,43 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
     script.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ProfilePage',
-      dateModified: '2026-04-19',
+      dateModified: '2026-04-28',
       mainEntity: {
         '@type': 'Person',
-        '@id': 'https://santifer.io/#person',
-        name: 'Santiago Fernández de Valderrama Aparicio',
-        alternateName: ['Santiago Fernández de Valderrama', 'santifer', 'Santi'],
-        url: 'https://santifer.io',
-        image: 'https://santifer.io/foto-avatar.png',
-        email: 'hola@santifer.io',
-        jobTitle: ['Head of Applied AI', 'AI Product Manager', 'Solutions Architect (No/Low-Code & AI)', 'AI Forward Deployed Engineer'],
+        '@id': `${SITE_URL}/#person`,
+        name: 'Angel Lambertt',
+        alternateName: ['Angel Lambertt', 'alambertt'],
+        url: SITE_URL,
+        image: `${SITE_URL}/angel-avatar.webp`,
+        email: 'mailto:alambertt1991@icloud.com',
+        jobTitle: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'AI Product Engineer'],
         knowsAbout: [
+          { '@type': 'Thing', name: 'Full Stack Software Engineering' },
+          { '@type': 'Thing', name: 'Cloud Architecture' },
+          { '@type': 'Thing', name: 'Serverless Architecture' },
+          { '@type': 'Thing', name: 'Infrastructure as Code' },
           { '@type': 'Thing', name: 'Artificial Intelligence', url: 'https://en.wikipedia.org/wiki/Artificial_intelligence' },
-          { '@type': 'Thing', name: 'Machine Learning', url: 'https://en.wikipedia.org/wiki/Machine_learning' },
-          { '@type': 'Thing', name: 'Multi-Agent System', url: 'https://en.wikipedia.org/wiki/Multi-agent_system' },
-          { '@type': 'Thing', name: 'Retrieval-Augmented Generation', url: 'https://en.wikipedia.org/wiki/Retrieval-augmented_generation' },
-          { '@type': 'Thing', name: 'No-code development platform', url: 'https://en.wikipedia.org/wiki/No-code_development_platform' },
-          { '@type': 'Thing', name: 'Prompt Engineering' },
-          { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com' },
-          { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io' },
-          { '@type': 'SoftwareApplication', name: 'Claude API', url: 'https://docs.anthropic.com' },
+          { '@type': 'SoftwareApplication', name: 'React', url: 'https://react.dev' },
+          { '@type': 'SoftwareApplication', name: 'Angular', url: 'https://angular.dev' },
+          { '@type': 'SoftwareApplication', name: 'FastAPI', url: 'https://fastapi.tiangolo.com' },
+          { '@type': 'SoftwareApplication', name: 'AWS CDK', url: 'https://aws.amazon.com/cdk/' },
         ],
         hasCredential: [
-          { '@type': 'EducationalOccupationalCredential', name: 'Introduction to Model Context Protocol', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/4pxam3irsioq' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Claude Code in Action', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/eijx7hwc2x89' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Advanced MCP Topics', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/eiovmq5qaeyd' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Building with the Claude API', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/s4bu5znz53vm' },
-          { '@type': 'EducationalOccupationalCredential', name: 'AI Fluency: Framework & Foundations', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/d6rhfox7ktq6' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Teaching AI Fluency', recognizedBy: { '@type': 'Organization', name: 'Anthropic' }, url: 'https://verify.skilljar.com/c/x3bzuoz99rq5' },
-          { '@type': 'EducationalOccupationalCredential', name: 'AI App Builder Certification', recognizedBy: { '@type': 'Organization', name: 'Airtable' }, url: 'https://verify.skilljar.com/c/gwg7ak9qgf7r' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Airtable Builder Certification', recognizedBy: { '@type': 'Organization', name: 'Airtable' }, url: 'https://verify.skilljar.com/c/id2e4zgqtasv' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Airtable Admin Certification', recognizedBy: { '@type': 'Organization', name: 'Airtable' }, url: 'https://verify.skilljar.com/c/u3r8kgn5wdit' },
-          { '@type': 'EducationalOccupationalCredential', name: 'Make Advanced', recognizedBy: { '@type': 'Organization', name: 'Make Academy' }, url: 'https://www.credly.com/badges/d27b8174-ef20-46bd-9d81-ee05e9c349e8' },
+          { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Cloud Practitioner', recognizedBy: { '@type': 'Organization', name: 'Amazon Web Services' } },
+          { '@type': 'EducationalOccupationalCredential', name: 'Google Cloud training and certification', recognizedBy: { '@type': 'Organization', name: 'Google Cloud' } },
         ],
         alumniOf: [
-          { '@type': 'EducationalOrganization', name: 'AI Product Academy — AI PM Bootcamp', url: 'https://maven.com/marily-nika/ai-pm-bootcamp', founder: { '@type': 'Person', name: 'Dr. Marily Nika', sameAs: 'https://www.wikidata.org/wiki/Q107463356' } },
-          { '@type': 'EducationalOrganization', name: 'BIGSEO - Master en Inteligencia Artificial' },
-          { '@type': 'EducationalOrganization', name: 'ETSI - Universidad de Sevilla' },
+          { '@type': 'EducationalOrganization', name: 'Universidad de Ciencias Informaticas' },
         ],
-        founder: {
-          '@type': 'Organization',
-          name: 'Santifer iRepair',
-          url: 'https://santiferirepair.es',
-          foundingDate: '2009',
-        },
         sameAs: [
-          'https://www.linkedin.com/in/santifer',
-          'https://github.com/santifer',
-          'https://x.com/santifer',
-          'https://dev.to/santifer',
-          'https://santifer.substack.com',
-          'https://contentdigest.santifer.io',
-          'https://www.youtube.com/@santifer_io',
-          'https://stackoverflow.com/users/32541743',
-          'https://orcid.org/0009-0006-2192-7210',
-          'https://www.crunchbase.com/person/santiago-fernandez-de-valderrama',
-          'https://huggingface.co/santifer',
-          'https://www.wikidata.org/wiki/Q138710224',
-          'https://santiferirepair.es',
-          'https://www.facebook.com/santifer.io/',
-          'https://www.producthunt.com/@santifer',
-          'https://app.daily.dev/santifer',
+          'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9',
+          'https://github.com/alambertt',
         ],
-        subjectOf: {
-          '@type': 'NewsArticle',
-          headline: 'Salir de compras: Una solución exprés para el teléfono',
-          publisher: { '@type': 'NewsMediaOrganization', name: 'Diario de Sevilla' },
-          datePublished: '2014-06-19',
-          url: 'https://www.diariodesevilla.es/vivirensevilla/Salir-compras-solucion-expres-telefono_0_817718799.html',
-        },
         worksFor: {
           '@type': 'Organization',
-          '@id': 'https://zinkee.com/#org',
-          name: 'Zinkee',
-          url: 'https://zinkee.com',
-          description: 'B2B SaaS platform building a horizontal AI layer for SMBs.',
+          name: 'Argus',
         },
-        award: 'AI Product Academy Bootcamp — Winning Project 2025 (Maven, led by Dr. Marily Nika, Google)',
-        address: { '@type': 'PostalAddress', addressLocality: 'Sevilla', addressCountry: 'ES' },
+        address: { '@type': 'PostalAddress', addressLocality: 'Jupiter', addressRegion: 'FL', addressCountry: 'US' },
       },
     })
 
@@ -137,7 +90,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
     faqScript.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      '@id': `https://santifer.io/${t.slug}/#faq`,
+      '@id': `${SITE_URL}/${t.slug}/#faq`,
       inLanguage: lang,
       mainEntity: t.faq.map(item => ({
         '@type': 'Question',
@@ -160,10 +113,10 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
         {/* Header */}
         <header className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10">
           <img
-            src="/foto-avatar-sm.webp"
-            srcSet="/foto-avatar-sm.webp 192w, /foto-avatar.webp 384w"
+            src="/angel-avatar-sm.webp"
+            srcSet="/angel-avatar-sm.webp 192w, /angel-avatar.webp 384w"
             sizes="96px"
-            alt="Santiago Fernández de Valderrama"
+            alt="Angel Lambertt"
             className="w-24 h-24 rounded-full border-2 border-border shadow-lg"
             width={96}
             height={96}
@@ -187,7 +140,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
         </header>
 
         {/* Manifesto */}
-        <blockquote cite="https://santifer.io/career-ops" className="mb-10 border-l-4 border-primary pl-6 pr-4 py-3 text-xl md:text-2xl italic font-display leading-snug text-foreground/90">
+        <blockquote cite={SITE_URL} className="mb-10 border-l-4 border-primary pl-6 pr-4 py-3 text-xl md:text-2xl italic font-display leading-snug text-foreground/90">
           {t.manifesto}
         </blockquote>
 
@@ -397,7 +350,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
         {/* Footer */}
         <footer className="mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Santiago Fernández de Valderrama. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+            &copy; {new Date().getFullYear()} Angel Lambertt. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
           </p>
         </footer>
       </main>
