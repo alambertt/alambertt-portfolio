@@ -93,7 +93,7 @@ urls.push({
   loc: `${base}/sobre-mi`,
   hreflangEs: `${base}/sobre-mi`,
   hreflangEn: `${base}/about`,
-  xDefault: `${base}/sobre-mi`,
+  xDefault: `${base}/about`,
   lastmod: aboutLastmod,
   priority: '0.9',
 })
@@ -101,7 +101,7 @@ urls.push({
   loc: `${base}/about`,
   hreflangEs: `${base}/sobre-mi`,
   hreflangEn: `${base}/about`,
-  xDefault: `${base}/sobre-mi`,
+  xDefault: `${base}/about`,
   lastmod: aboutLastmod,
   priority: '0.9',
 })

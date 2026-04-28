@@ -83,7 +83,7 @@ export default function BusinessOS({ lang = 'en' }: { lang?: Lang }) {
     modifiedTime: '2026-03-06',
     articleTags: 'Business OS,Airtable,n8n,ERP,CRM,automation,phone repair',
     jsonLd: buildJsonLd(lang),
-    xDefaultSlug: 'business-os-para-airtable',
+    xDefaultSlug: 'business-os-for-airtable',
   })
 
 

@@ -120,7 +120,7 @@ export default function JacoboAgent({ lang = 'en' }: { lang?: Lang }) {
     modifiedTime: '2026-03-07',
     articleTags: 'AI agent,multi-agent,n8n,ElevenLabs,HITL,tool calling,WhatsApp,voice AI',
     jsonLd: buildJsonLd(lang),
-    xDefaultSlug: 'agente-ia-jacobo',
+    xDefaultSlug: 'ai-agent-jacobo',
   })
 
   // ---- Render ----

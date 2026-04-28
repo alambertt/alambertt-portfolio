@@ -36,7 +36,7 @@ export interface ArticleConfig {
   /** Hero image path for JSON-LD / GEO (what AI search engines see). Falls back to ogImage if not set. */
   heroImage?: string
   component: () => Promise<{ default: ComponentType<{ lang: 'es' | 'en' }> }>
-  /** x-default hreflang slug (defaults to ES slug) */
+  /** x-default hreflang slug (defaults to EN slug) */
   xDefaultSlug?: string
   /** Whether this article is ready for RAG indexing (default: false) */
   ragReady?: boolean
@@ -587,7 +587,7 @@ export const articleRegistry: ArticleConfig[] = [
     sectionLabels: { es: {}, en: {} },
     type: 'bridge',
     component: () => import('../SantiferIRepair.tsx'),
-    xDefaultSlug: 'santifer-irepair',
+    xDefaultSlug: 'santifer-irepair-founder',
   },
 ]
 

@@ -45,7 +45,7 @@ export default function N8nForPMs({ lang = 'en' }: { lang?: N8nLang }) {
     modifiedTime: '2026-03-06',
     articleTags: 'n8n,product manager,automation,AI,workflow,no-code',
     jsonLd: buildJsonLd(lang),
-    xDefaultSlug: 'n8n-para-pms',
+    xDefaultSlug: 'n8n-for-pms',
   })
 
   const MASTERCLASS_URL = 'https://maven.com/p/52fc7d/masterclass-n8n-for-p-ms'

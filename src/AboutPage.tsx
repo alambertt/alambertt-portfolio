@@ -29,7 +29,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
     const hreflangs = [
       { lang: 'es', href: `${SITE_URL}/sobre-mi` },
       { lang: 'en', href: `${SITE_URL}/about` },
-      { lang: 'x-default', href: `${SITE_URL}/sobre-mi` },
+      { lang: 'x-default', href: `${SITE_URL}/about` },
     ]
     document.querySelectorAll('link[hreflang]').forEach(el => el.remove())
     for (const hl of hreflangs) {

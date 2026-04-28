@@ -49,7 +49,7 @@ export default function SantiferIRepair({ lang }: { lang: IRepairLang }) {
     publishedTime: '2026-03-08',
     articleTags: 'Santifer iRepair, phone repair, Seville, exit, founder',
     jsonLd,
-    xDefaultSlug: 'santifer-irepair',
+    xDefaultSlug: 'santifer-irepair-founder',
   })
 
   useEffect(() => {

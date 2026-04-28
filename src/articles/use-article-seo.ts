@@ -41,7 +41,7 @@ export interface ArticleSeoOpts {
   modifiedTime?: string
   articleTags: string
   jsonLd: object
-  /** ES slug used as x-default hreflang (defaults to slug when lang=es) */
+  /** English slug used as x-default hreflang. */
   xDefaultSlug?: string
 }
 
@@ -55,7 +55,7 @@ export function useArticleSeo(opts: ArticleSeoOpts) {
     const url = `https://www.alambertt.dev/${slug}`
     const altUrl = `https://www.alambertt.dev/${altSlug}`
     const altLang = lang === 'es' ? 'en' : 'es'
-    const defaultSlug = xDefaultSlug ?? (lang === 'es' ? slug : altSlug)
+    const defaultSlug = xDefaultSlug ?? (lang === 'en' ? slug : altSlug)
 
     document.title = title
 

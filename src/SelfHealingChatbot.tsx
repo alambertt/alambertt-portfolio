@@ -112,7 +112,7 @@ export default function SelfHealingChatbot({ lang = 'en' }: { lang?: Lang }) {
     modifiedTime: '2026-03-14',
     articleTags: 'LLMOps,self-healing chatbot,agentic RAG,jailbreak defense,Langfuse,evals,closed-loop,prompt injection',
     jsonLd: buildJsonLd(lang),
-    xDefaultSlug: 'chatbot-que-se-cura-solo',
+    xDefaultSlug: 'self-healing-chatbot',
   })
 
   const s = t.sections

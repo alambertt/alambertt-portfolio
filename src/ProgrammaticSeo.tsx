@@ -254,7 +254,7 @@ export default function ProgrammaticSeo({ lang = 'en' }: { lang?: Lang }) {
     modifiedTime: '2026-03-10',
     articleTags: 'programmatic SEO,Airtable,Astro,DataForSEO,crawl budget,phone repair,ERP,local SEO',
     jsonLd: buildJsonLd(lang),
-    xDefaultSlug: 'seo-programatico',
+    xDefaultSlug: 'programmatic-seo',
   })
 
   return (

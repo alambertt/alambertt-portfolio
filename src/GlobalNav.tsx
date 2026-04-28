@@ -235,7 +235,7 @@ function NavControls({ altPath, altLabel, lang, isDark, toggleTheme }: {
         aria-label={altLang === 'en' ? 'Switch to English' : 'Cambiar a español'}
         className="inline-flex items-center justify-center gap-1.5 w-[4.5rem] h-10 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
       >
-        {altLang === 'en' ? <FlagEN className="w-3.5 h-3.5" /> : <FlagES className="w-3.5 h-3.5" />}
+        {lang === 'en' ? <FlagEN className="w-3.5 h-3.5" /> : <FlagES className="w-3.5 h-3.5" />}
         {altLabel}
       </Link>
       <button
@@ -257,7 +257,7 @@ export default function GlobalNav() {
   const activeSection = useActiveSection(pathname, !isHome)
 
   const altPath = ALT_PATH[pathname] || (lang === 'es' ? '/en' : '/')
-  const altLabel = lang === 'es' ? 'EN' : 'ES'
+  const altLabel = lang === 'es' ? 'ES' : 'EN'
 
   const t = translations[lang]
   const hasBar = !isHome
