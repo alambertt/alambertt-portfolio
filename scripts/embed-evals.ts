@@ -88,7 +88,6 @@ function parseReport(content: string): EvalResults {
   // Parse Detailed Results to get individual test results
   // Format: #### emoji testId
   const detailedSections = content.split(/### (.+)\n/)
-  let currentCatName = ''
 
   for (let i = 1; i < detailedSections.length; i += 2) {
     const sectionTitle = detailedSections[i]?.trim()
@@ -97,7 +96,6 @@ function parseReport(content: string): EvalResults {
     // Category headers are like "factual" (matching category names)
     const cat = categories.find(c => c.name === sectionTitle)
     if (cat) {
-      currentCatName = sectionTitle
       // Parse individual tests within this section
       const testBlocks = sectionBody.split(/#### [✅❌] /)
       for (let j = 1; j < testBlocks.length; j++) {

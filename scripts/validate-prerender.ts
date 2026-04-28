@@ -29,7 +29,7 @@ interface Issue { severity: Severity; msg: string; skill?: string }
 // Per-article HTML checks
 // ---------------------------------------------------------------------------
 
-function validatePrerenderHtml(id: string, slug: string, lang: 'es' | 'en'): Issue[] {
+function validatePrerenderHtml(id: string, slug: string, _lang: 'es' | 'en'): Issue[] {
   const issues: Issue[] = []
   const htmlPath = resolve(dist, slug, 'index.html')
 

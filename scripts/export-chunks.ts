@@ -239,7 +239,7 @@ function parseI18n(source: I18nSource): Chunk[] {
 // Parser 2: Plaintext (llms.txt)
 // ---------------------------------------------------------------------------
 
-function parsePlaintext(filePath: string, articleId: string): Chunk[] {
+function _parsePlaintext(filePath: string, articleId: string): Chunk[] {
   const fullPath = resolve(root, filePath)
   let content: string
   try {

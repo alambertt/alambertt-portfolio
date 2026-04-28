@@ -143,7 +143,7 @@ try {
 
 const enSeo = seo.en;
 
-let enPage = indexHtml
+const enPage = indexHtml
   .replace('<div id="root"></div>', `<div id="root">${enHtml}</div>`)
   .replace(/<html lang="[^"]*" class="dark">/, '<html lang="en" class="dark">')
   .replace(/<title>[^<]*<\/title>/, `<title>${esc(enSeo.title)}</title>`)

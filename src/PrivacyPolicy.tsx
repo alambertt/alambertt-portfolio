@@ -120,11 +120,11 @@ export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
     robots.content = 'noindex, nofollow'
 
     // Fix canonical (SPA fallback serves homepage canonical — override it)
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
+    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
     if (canonical) canonical.href = `https://www.alambertt.dev/${lang === 'es' ? 'privacidad' : 'privacy'}`
 
     // Fix meta description
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement
+    const desc = document.querySelector('meta[name="description"]') as HTMLMetaElement
     if (desc) desc.content = lang === 'es'
       ? 'Politica de privacidad de alambertt.dev. Como se recopilan y utilizan los datos del chatbot y la web.'
       : 'Privacy policy for alambertt.dev. How chatbot and website data is collected and used.'

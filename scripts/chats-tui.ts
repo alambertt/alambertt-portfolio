@@ -38,7 +38,6 @@ const SHOW_CURSOR = `${ESC}[?25h`;
 const BOLD = `${ESC}[1m`;
 const DIM = `${ESC}[2m`;
 const RESET = `${ESC}[0m`;
-const RED = `${ESC}[31m`;
 const GREEN = `${ESC}[32m`;
 const YELLOW = `${ESC}[33m`;
 const BLUE = `${ESC}[34m`;
@@ -243,8 +242,8 @@ async function exportAllChats(traces: Trace[], traceDetails: (Trace | null)[], j
   return filepath;
 }
 
-function renderConversation(trace: Trace, index: number, total: number, scrollOffset: number = 0): string[] {
-  const { cols, rows } = getTerminalSize();
+function renderConversation(trace: Trace, index: number, total: number, _scrollOffset: number = 0): string[] {
+  const { cols } = getTerminalSize();
   const contentWidth = Math.min(cols - 4, 80);
   const lines: string[] = [];
 
