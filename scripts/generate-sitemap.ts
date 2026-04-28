@@ -75,7 +75,7 @@ urls.push({
   loc: `${base}/`,
   hreflangEs: `${base}/`,
   hreflangEn: `${base}/en`,
-  xDefault: `${base}/`,
+  xDefault: `${base}/en`,
   lastmod: homeLastmod,
   priority: '1.0',
 })
@@ -83,7 +83,7 @@ urls.push({
   loc: `${base}/en`,
   hreflangEs: `${base}/`,
   hreflangEn: `${base}/en`,
-  xDefault: `${base}/`,
+  xDefault: `${base}/en`,
   lastmod: homeLastmod,
   priority: '0.9',
 })

@@ -19,9 +19,18 @@ import { getAltPaths, getPageTitles, getSectionLabels, getEsSlugs } from './arti
 
 const ALT_PATH = getAltPaths()
 const BANNER_DISMISSED_KEY = 'lang-banner-dismissed'
+const LANGUAGE_PREF_KEY = 'preferred-lang'
 const PAGE_TITLE = getPageTitles()
 const SECTION_LABELS = getSectionLabels()
 const ES_SLUGS = getEsSlugs()
+
+function setLanguagePreference(lang: Lang) {
+  try {
+    localStorage.setItem(LANGUAGE_PREF_KEY, lang)
+  } catch {
+    // Ignore storage failures; navigation still works.
+  }
+}
 
 /** Observes h2[id] elements and returns the currently visible section ID */
 function useActiveSection(pathname: string, enabled: boolean) {
@@ -179,7 +188,7 @@ function useLanguageBanner(lang: Lang) {
   return { showBanner: visible, dismiss, animateBanner: visible && isFirstAppearance.current }
 }
 
-/** Circular flag icons — Spain (red-yellow-red) and UK (Union Jack simplified) */
+/** Circular flag icons — Spain and United States */
 function FlagES({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 16 16" aria-hidden="true">
@@ -198,11 +207,16 @@ function FlagEN({ className = "w-4 h-4" }: { className?: string }) {
     <svg className={className} viewBox="0 0 16 16" aria-hidden="true">
       <clipPath id="flagCircleEN"><circle cx="8" cy="8" r="8" /></clipPath>
       <g clipPath="url(#flagCircleEN)">
-        <rect width="16" height="16" fill="#012169" />
-        <path d="M0 0L16 16M16 0L0 16" stroke="#fff" strokeWidth="2.5" />
-        <path d="M0 0L16 16M16 0L0 16" stroke="#c8102e" strokeWidth="1.5" />
-        <path d="M8 0V16M0 8H16" stroke="#fff" strokeWidth="4" />
-        <path d="M8 0V16M0 8H16" stroke="#c8102e" strokeWidth="2.5" />
+        <rect width="16" height="16" fill="#fff" />
+        {Array.from({ length: 7 }).map((_, index) => (
+          <rect key={index} y={index * 2.45} width="16" height="1.23" fill="#b22234" />
+        ))}
+        <rect width="7.1" height="8.6" fill="#3c3b6e" />
+        {Array.from({ length: 5 }).map((_, row) =>
+          Array.from({ length: 4 }).map((__, col) => (
+            <circle key={`${row}-${col}`} cx={1 + col * 1.55} cy={0.9 + row * 1.55} r="0.18" fill="#fff" />
+          ))
+        )}
       </g>
     </svg>
   )
@@ -212,13 +226,16 @@ function FlagEN({ className = "w-4 h-4" }: { className?: string }) {
 function NavControls({ altPath, altLabel, lang, isDark, toggleTheme }: {
   altPath: string; altLabel: string; lang: Lang; isDark: boolean; toggleTheme: () => void
 }) {
+  const altLang: Lang = lang === 'es' ? 'en' : 'es'
   return (
     <div className="flex items-center gap-2">
       <Link
         to={altPath}
+        onClick={() => setLanguagePreference(altLang)}
+        aria-label={altLang === 'en' ? 'Switch to English' : 'Cambiar a español'}
         className="inline-flex items-center justify-center gap-1.5 w-[4.5rem] h-10 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
       >
-        {lang === 'es' ? <FlagES className="w-3.5 h-3.5" /> : <FlagEN className="w-3.5 h-3.5" />}
+        {altLang === 'en' ? <FlagEN className="w-3.5 h-3.5" /> : <FlagES className="w-3.5 h-3.5" />}
         {altLabel}
       </Link>
       <button
@@ -240,7 +257,7 @@ export default function GlobalNav() {
   const activeSection = useActiveSection(pathname, !isHome)
 
   const altPath = ALT_PATH[pathname] || (lang === 'es' ? '/en' : '/')
-  const altLabel = lang === 'es' ? 'ES' : 'EN'
+  const altLabel = lang === 'es' ? 'EN' : 'ES'
 
   const t = translations[lang]
   const hasBar = !isHome
@@ -263,6 +280,7 @@ export default function GlobalNav() {
   if (!isHome) backLinkShown.current = true
 
   const switchLang = () => {
+    setLanguagePreference(lang === 'es' ? 'en' : 'es')
     dismiss()
     navigate(altPath)
   }

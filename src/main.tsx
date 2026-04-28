@@ -1,6 +1,6 @@
 import { StrictMode, lazy, Suspense, useState, useEffect, useRef, Component, type ReactNode, type ComponentType } from 'react'
 import { hydrateRoot, createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, Link, useNavigate } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 import App from './App.tsx'
@@ -13,6 +13,7 @@ const OpsDashboard = lazy(() => import('./ops/OpsDashboard'))
 const PrivacyPolicy = lazy(() => import('./PrivacyPolicy'))
 const AboutPage = lazy(() => import('./AboutPage'))
 const ENABLE_FLOATING_CHAT = false
+const LANGUAGE_PREF_KEY = 'preferred-lang'
 
 // Lazy-load article components from registry
 const articleComponents: Record<string, React.LazyExoticComponent<ComponentType<{ lang: 'es' | 'en' }>>> = {}
@@ -105,6 +106,30 @@ function ConditionalNav() {
   return <GlobalNav />
 }
 
+function LanguagePreferenceRedirect() {
+  const { pathname, search, hash } = useLocation()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (pathname !== '/') return
+
+    let preferred: string | null = null
+    try {
+      preferred = localStorage.getItem(LANGUAGE_PREF_KEY)
+    } catch {
+      preferred = null
+    }
+
+    const browserLangs = navigator.languages?.length ? navigator.languages : [navigator.language || '']
+    const requestedLang = preferred || browserLangs[0] || ''
+    if (!requestedLang.toLowerCase().startsWith('es')) {
+      navigate(`/en${search}${hash}`, { replace: true })
+    }
+  }, [pathname, search, hash, navigate])
+
+  return null
+}
+
 // Console easter egg
 const ASCII_ART = `\n ███████╗ █████╗ ███╗   ██╗████████╗██╗███████╗███████╗██████╗ \n ██╔════╝██╔══██╗████╗  ██║╚══██╔══╝██║██╔════╝██╔════╝██╔══██╗\n ███████╗███████║██╔██╗ ██║   ██║   ██║█████╗  █████╗  ██████╔╝\n ╚════██║██╔══██║██║╚██╗██║   ██║   ██║██╔══╝  ██╔══╝  ██╔══██╗\n ███████║██║  ██║██║ ╚████║   ██║   ██║██║     ███████╗██║  ██║\n ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝\n`
 console.log(`%c${ASCII_ART}`, 'color: #f97316; font-size: 12px; font-family: monospace;')
@@ -163,6 +188,7 @@ const root = document.getElementById('root')!
 const app = (
   <StrictMode>
     <BrowserRouter>
+      <LanguagePreferenceRedirect />
       <ConditionalNav />
       <PageTransition>
         <Suspense fallback={null}>

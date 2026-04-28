@@ -21,7 +21,7 @@
     <link rel="canonical" href="https://www.alambertt.dev/" />
     <link rel="alternate" hreflang="es" href="https://www.alambertt.dev/" />
     <link rel="alternate" hreflang="en" href="https://www.alambertt.dev/en" />
-    <link rel="alternate" hreflang="x-default" href="https://www.alambertt.dev/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.alambertt.dev/en" />
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -74,6 +74,10 @@
     <!-- Theme detection before first paint (eliminates dark→light FOUC) -->
     <script>
       (function(){var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;var h=document.documentElement;h.classList.toggle('dark',d);h.classList.toggle('light',!d);var m=document.querySelector('meta[name="color-scheme"]');if(m)m.content=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.content=d?'#0a0a0a':'#ffffff'})()
+    </script>
+    <!-- Browser-language routing: Spanish browsers stay on /, English is the fallback. -->
+    <script>
+      (function(){try{if(location.pathname!=='/')return;var p=localStorage.getItem('preferred-lang');var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];var wantsEs=(p||ls[0]||'').toLowerCase().startsWith('es');if(!wantsEs)location.replace('/en'+location.search+location.hash)}catch(e){}})()
     </script>
   </head>
   <body>
