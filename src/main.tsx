@@ -2,6 +2,7 @@ import { StrictMode, lazy, Suspense, useState, useEffect, useRef, Component, typ
 import { hydrateRoot, createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation, Link, useNavigate } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
+import { injectSpeedInsights } from '@vercel/speed-insights'
 import './index.css'
 import App from './App.tsx'
 import GlobalNav from './GlobalNav.tsx'
@@ -183,6 +184,9 @@ function NotFound() {
     </div>
   )
 }
+
+// Initialize Vercel Speed Insights
+injectSpeedInsights()
 
 const root = document.getElementById('root')!
 const app = (
