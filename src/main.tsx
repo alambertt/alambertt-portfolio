@@ -2,6 +2,7 @@ import { StrictMode, lazy, Suspense, useState, useEffect, useRef, Component, typ
 import { hydrateRoot, createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation, Link, useNavigate } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import './index.css'
 import App from './App.tsx'
 import GlobalNav from './GlobalNav.tsx'
@@ -215,6 +216,7 @@ const app = (
       {ENABLE_FLOATING_CHAT && <GlobalChat />}
       <GlobalMusic />
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   </StrictMode>
 )
