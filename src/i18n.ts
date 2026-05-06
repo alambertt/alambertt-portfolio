@@ -15,7 +15,7 @@ export const seo = {
 
 export const translations = {
   es: {
-    greeting: 'convirtiendo ideas en herramientas digitales potentes',
+    greeting: 'Ingeniero senior creando productos full-stack y cloud-native.',
     greetingRoles: ['Fullstack Developer', 'AI Solutions Builder', 'Cloud Engineer'],
     pillLabels: ['Fullstack', 'AI Solutions', 'Cloud'],
     email: 'alambertt1991@icloud.com',
@@ -285,30 +285,14 @@ export const translations = {
       title: 'Experiencia Laboral',
       zinkee: {
         company: 'Argus Enterprises Serv Group',
-        logo: '/zinkee-logo.webp',
         location: 'West Palm Beach, Florida · Remoto',
         role: 'Senior Software Engineer · Contract',
         period: 'May 2025 - Presente',
         desc: 'Trabajo en dos plataformas bajo Argus Enterprises Serv Group, combinando arquitectura AWS, infraestructura como código, seguridad y desarrollo full-stack para entornos DoD-compliant.',
-        platforms: [
-          {
-            name: 'Faros',
-            desc: 'Plataforma AWS con CDK/IaC, CI/CD, múltiples entornos, monitoring/alerting y hardening de seguridad.',
-            link: 'https://www.argusenterprises.com/faros',
-          },
-          {
-            name: 'Morpheus',
-            desc: 'Sistema con backend FastAPI y contribuciones frontend/backend sobre arquitectura AWS, enfocado en confiabilidad, mantenibilidad y requisitos de seguridad.',
-            link: 'https://www.argusenterprises.com/morpheus',
-          },
-        ],
         highlights: [
-          'Arquitectura y despliegue de infraestructura AWS para aplicaciones business-critical',
-          'Implementación de AWS CDK/IaC para entornos repetibles, consistentes y mantenibles',
-          'Construcción de CI/CD desde cero para mejorar confiabilidad de releases',
-          'Hardening de seguridad en aplicación e infraestructura para contextos DoD-compliant',
-          'Contribuciones full-stack en arquitecturas serverless, microservicios, monolitos y FastAPI',
-          'Colaboración remota con stakeholders de producto e ingeniería para convertir requisitos complejos en soluciones desplegables',
+          'Arquitectura y despliegue de infraestructura AWS con CDK/IaC para entornos DoD-compliant business-critical',
+          'CI/CD desde cero y hardening de seguridad en aplicación e infraestructura cloud',
+          'Entrega full-stack en sistemas serverless, microservicios y FastAPI con stakeholders remotos',
         ],
       },
       santifer: {
@@ -318,9 +302,6 @@ export const translations = {
         period: 'Nov 2025 - Presente · SaaS distribuido',
         caseStudyUrl: '#projects',
         caseStudyLabel: 'Ver proyectos',
-        exit: 'Startup builder',
-        exitDesc:
-          'Co-fundador técnico construyendo producto, infraestructura y tooling desde cero',
         highlights: [
           'Plataforma SaaS distribuida en etapa temprana',
           'Tooling CLI de performance testing en Go',
@@ -341,138 +322,6 @@ export const translations = {
             { name: 'AI', icon: '<path d="M12 2l1.3 5.2L18 4.5l-2.7 4.8L21 12l-5.7 2.7L18 19.5l-4.7-2.7L12 22l-1.3-5.2L6 19.5l2.7-4.8L3 12l5.7-2.7L6 4.5l4.7 2.7z"/>' },
           ],
         },
-        businessOS: {
-          title: 'Cloud Architecture Foundation',
-          badge: 'AWS · IaC',
-          desc: 'Diseño de infraestructura cloud para productos distribuidos, con énfasis en escalabilidad, seguridad, repetibilidad y despliegues mantenibles.',
-          metrics: [
-            { value: '9+', label: 'años experiencia' },
-            { value: '4', label: 'lenguajes core' },
-            { value: '2', label: 'clouds principales' },
-          ],
-          modules: [
-            {
-              icon: 'database',
-              text: 'Infraestructura como código con AWS CDK',
-            },
-            {
-              icon: 'users',
-              text: 'Sistemas frontend/backend conectados a objetivos de negocio',
-            },
-            {
-              icon: 'layout',
-              text: 'Servicios serverless y microservicios cuando el problema lo requiere',
-            },
-            {
-              icon: 'package',
-              text: 'Herramientas CLI para validación, performance y flujos internos',
-            },
-            {
-              icon: 'messageSquare',
-              text: 'Chatbots y automatización asistida por IA',
-            },
-            {
-              icon: 'receipt',
-              text: 'Hardening de seguridad en cloud y aplicaciones',
-            },
-            {
-              icon: 'calendarCheck',
-              text: 'Documentación y colaboración para equipos remotos',
-            },
-          ],
-          footer: 'Ver proyectos',
-        },
-        jacobo: {
-          title: 'AI Chatbots & Workflow Agents',
-          badge: 'IA aplicada',
-          github: 'alambertt/jobs-apply-ai',
-          stars: '',
-          forks: '',
-          desc: 'Construcción de agentes chatbot y workflows asistidos por IA para mejorar interacción de usuarios, productividad y procesos de negocio.',
-          items: [
-            {
-              icon: 'network',
-              text: 'Diseño de flujos conversacionales orientados a producto',
-            },
-            {
-              icon: 'calendar',
-              text: 'Integración con servicios backend y datos de negocio',
-            },
-            {
-              icon: 'percent',
-              text: 'Automatización de tareas repetitivas con supervisión humana',
-            },
-            {
-              icon: 'package',
-              text: 'Uso de IA para acelerar entrega y análisis técnico',
-            },
-            {
-              icon: 'userCheck',
-              text: 'Entregas incrementales en entornos remotos',
-            },
-          ],
-          soldWith: 'Ver experiencia',
-          caseStudyUrl: '#experience',
-        },
-        webSeo: {
-          title: 'Full-stack Product Delivery',
-          badge: 'React · Angular · APIs',
-          github: 'alambertt/alambertt-portfolio',
-          stars: '',
-          forks: '',
-          desc: 'Entrega de interfaces, APIs, servicios backend e integraciones cloud para productos SaaS, plataformas internas y sistemas operativos.',
-          items: [
-            {
-              icon: 'fileText',
-              text: 'Interfaces React y Angular orientadas a workflows reales',
-            },
-            {
-              icon: 'image',
-              text: 'Backends Node.js, Python/FastAPI y Go',
-            },
-            {
-              icon: 'trendingUp',
-              text: 'Bases de datos MySQL, MongoDB y DynamoDB',
-            },
-            {
-              icon: 'gitBranch',
-              text: 'Arquitectura cloud en AWS y GCP',
-            },
-            { icon: 'bot', text: 'Automatización e IA donde genera valor' },
-          ],
-          codeAvailable: 'Ver proyectos',
-          caseStudyUrl: '#projects',
-        },
-        erp: {
-          title: 'AWS CDK',
-          desc: 'Infraestructura reproducible, segura y mantenible',
-          metric: 'IaC',
-          caseStudyUrl: '#projects',
-        },
-        gpts: {
-          title: 'FastAPI / Node.js',
-          desc: 'Servicios backend, APIs y lógica de negocio',
-          metric: 'Backend',
-          caseStudyUrl: '#projects',
-        },
-        reservas: {
-          title: 'React / Angular',
-          desc: 'Interfaces para plataformas cloud, IoT y SaaS',
-          metric: 'Frontend',
-          caseStudyUrl: '#projects',
-        },
-        crm: {
-          title: 'Python / Image Processing',
-          desc: 'Procesamiento técnico para workflows diagnósticos',
-          metric: 'GCP',
-          caseStudyUrl: '#projects',
-        },
-        genAI: {
-          title: 'AI-assisted Productivity',
-          desc: 'Chatbots, workflows y herramientas para acelerar ejecución',
-          metric: 'AI',
-          caseStudyUrl: '#projects',
-        },
       },
       lico: {
         company: 'SkillMil',
@@ -480,28 +329,12 @@ export const translations = {
         role: 'Senior Software Developer · Contract',
         period: 'Nov 2024 - Presente · Workforce / Recruiting Platform',
         desc: 'Desarrollo full-stack para una plataforma de recruiting y workforce. Diseño e implementación de funcionalidades frontend/backend, soluciones AWS y agentes chatbot con IA para mejorar interacción de usuarios y capacidades del producto.',
-        testimonial: {
-          quote:
-            'Trabajo enfocado en convertir requisitos de negocio y producto en funcionalidades escalables, listas para producción y útiles para usuarios reales.',
-          author: 'Angel Lambertt',
-          role: 'Senior Software Developer',
-        },
       },
       everis: {
         company: 'Targeted Bioscience, Inc.',
         role: 'Senior Software Engineer · Contract',
         period: 'Aug 2024 - Sep 2025 · Jupiter, Florida · Remoto',
         desc: 'Desarrollo frontend para plataformas cloud y contribuciones backend en Python, incluyendo procesamiento de imágenes de microscopio para workflows técnicos relacionados con patología y diagnóstico de cáncer.',
-        tesauro: {
-          title: 'Serverless en Google Cloud',
-          desc: 'Diseño de soluciones serverless en GCP para mejorar performance, reducir costos operativos y soportar procesamiento cloud eficiente.',
-        },
-        testimonial: {
-          quote:
-            'Experiencia en entornos técnicamente detallados, donde confiabilidad, precisión y colaboración entre producto e ingeniería son esenciales.',
-          author: 'Angel Lambertt',
-          role: 'Senior Software Engineer',
-        },
       },
     },
     linkedinPosts: {
@@ -673,7 +506,7 @@ export const translations = {
     },
   },
   en: {
-    greeting: 'turning ideas into powerful digital tools',
+    greeting: 'Senior engineer building full-stack and cloud-native products.',
     greetingRoles: ['Fullstack Developer', 'AI Solutions Builder', 'Cloud Engineer'],
     pillLabels: ['Fullstack', 'AI Solutions', 'Cloud'],
     email: 'alambertt1991@icloud.com',
@@ -943,30 +776,14 @@ export const translations = {
       title: 'Work Experience',
       zinkee: {
         company: 'Argus Enterprises Serv Group',
-        logo: '/zinkee-logo.webp',
         location: 'West Palm Beach, Florida · Remote',
         role: 'Senior Software Engineer · Contract',
         period: 'May 2025 - Present',
         desc: 'Work across two platforms under Argus Enterprises Serv Group, combining AWS architecture, infrastructure as code, security, and full-stack delivery for DoD-compliant environments.',
-        platforms: [
-          {
-            name: 'Faros',
-            desc: 'AWS platform with CDK/IaC, CI/CD, multiple environments, monitoring/alerting, and security hardening.',
-            link: 'https://www.argusenterprises.com/faros',
-          },
-          {
-            name: 'Morpheus',
-            desc: 'FastAPI-backed system with frontend/backend contributions on AWS architecture, focused on reliability, maintainability, and security requirements.',
-            link: 'https://www.argusenterprises.com/morpheus',
-          },
-        ],
         highlights: [
-          'Architect and deploy AWS infrastructure for business-critical applications',
-          'Implement AWS CDK/IaC for repeatable, consistent, and maintainable environments',
-          'Build CI/CD from scratch to improve release reliability',
-          'Drive application and cloud security hardening for DoD-compliant contexts',
-          'Contribute full-stack work across serverless, microservice, monolithic, and FastAPI systems',
-          'Collaborate remotely with product and engineering stakeholders to translate complex requirements into deployable solutions',
+          'Architect and deploy AWS infrastructure with CDK/IaC for DoD-compliant, business-critical environments',
+          'Build CI/CD from scratch and harden security across application and cloud',
+          'Deliver full-stack work across serverless, microservices, and FastAPI with remote stakeholders',
         ],
       },
       santifer: {
@@ -976,8 +793,6 @@ export const translations = {
         period: 'Nov 2025 - Present · Distributed SaaS',
         caseStudyUrl: '#projects',
         caseStudyLabel: 'View projects',
-        exit: 'Startup builder',
-        exitDesc: 'Technical cofounder building product, infrastructure, and tooling from zero',
         highlights: [
           'Early-stage distributed SaaS platform',
           'CLI-based performance testing tooling in Go',
@@ -998,135 +813,6 @@ export const translations = {
             { name: 'AI', icon: '<path d="M12 2l1.3 5.2L18 4.5l-2.7 4.8L21 12l-5.7 2.7L18 19.5l-4.7-2.7L12 22l-1.3-5.2L6 19.5l2.7-4.8L3 12l5.7-2.7L6 4.5l4.7 2.7z"/>' },
           ],
         },
-        businessOS: {
-          title: 'Cloud Architecture Foundation',
-          badge: 'AWS · IaC',
-          desc: 'Cloud infrastructure design for distributed products, with emphasis on scalability, security, repeatability, and maintainable deployments.',
-          metrics: [
-            { value: '9+', label: 'years experience' },
-            { value: '4', label: 'core languages' },
-            { value: '2', label: 'main clouds' },
-          ],
-          modules: [
-            {
-              icon: 'database',
-              text: 'Infrastructure as code with AWS CDK',
-            },
-            {
-              icon: 'users',
-              text: 'Frontend and backend systems tied to business goals',
-            },
-            { icon: 'layout', text: 'Serverless services and microservices when the problem requires them' },
-            {
-              icon: 'package',
-              text: 'CLI tools for validation, performance, and internal workflows',
-            },
-            {
-              icon: 'messageSquare',
-              text: 'Chatbots and AI-assisted automation',
-            },
-            {
-              icon: 'receipt',
-              text: 'Security hardening across cloud and applications',
-            },
-            {
-              icon: 'calendarCheck',
-              text: 'Documentation and collaboration for remote teams',
-            },
-          ],
-          footer: 'View projects',
-        },
-        jacobo: {
-          title: 'AI Chatbots & Workflow Agents',
-          badge: 'Applied AI',
-          github: 'alambertt/jobs-apply-ai',
-          stars: '',
-          forks: '',
-          desc: 'Chatbot agents and AI-assisted workflows that improve user interaction, productivity, and business processes.',
-          items: [
-            {
-              icon: 'network',
-              text: 'Product-oriented conversational workflow design',
-            },
-            {
-              icon: 'calendar',
-              text: 'Integration with backend services and business data',
-            },
-            {
-              icon: 'percent',
-              text: 'Automation of repetitive work with human supervision',
-            },
-            {
-              icon: 'package',
-              text: 'AI-assisted technical delivery and analysis',
-            },
-            {
-              icon: 'userCheck',
-              text: 'Incremental delivery in remote environments',
-            },
-          ],
-          soldWith: 'View experience',
-          caseStudyUrl: '#experience',
-        },
-        webSeo: {
-          title: 'Full-stack Product Delivery',
-          badge: 'React · Angular · APIs',
-          github: 'alambertt/alambertt-portfolio',
-          stars: '',
-          forks: '',
-          desc: 'Interfaces, APIs, backend services, and cloud integrations for SaaS products, internal platforms, and operational systems.',
-          items: [
-            {
-              icon: 'fileText',
-              text: 'React and Angular interfaces for real workflows',
-            },
-            {
-              icon: 'image',
-              text: 'Node.js, Python/FastAPI, and Go backends',
-            },
-            {
-              icon: 'trendingUp',
-              text: 'MySQL, MongoDB, and DynamoDB databases',
-            },
-            {
-              icon: 'gitBranch',
-              text: 'Cloud architecture on AWS and GCP',
-            },
-            { icon: 'bot', text: 'Automation and AI where they create value' },
-          ],
-          codeAvailable: 'View projects',
-          caseStudyUrl: '#projects',
-        },
-        erp: {
-          title: 'AWS CDK',
-          desc: 'Reproducible, secure, maintainable infrastructure',
-          metric: 'IaC',
-          caseStudyUrl: '#projects',
-        },
-        gpts: {
-          title: 'FastAPI / Node.js',
-          desc: 'Backend services, APIs, and business logic',
-          metric: 'Backend',
-          caseStudyUrl: '#projects',
-        },
-        reservas: {
-          title: 'React / Angular',
-          desc: 'Interfaces for cloud, IoT, and SaaS platforms',
-          metric: 'Frontend',
-          caseStudyUrl: '#projects',
-        },
-        crm: {
-          title: 'Python / Image Processing',
-          desc: 'Technical processing for diagnostic workflows',
-          metric: 'GCP',
-          caseStudyUrl: '#projects',
-        },
-        genAI: {
-          title: 'AI-assisted Productivity',
-          desc: 'Chatbots, workflows, and tools that accelerate execution',
-          metric: 'AI',
-          caseStudyUrl: '#projects',
-        },
       },
       lico: {
         company: 'SkillMil',
@@ -1134,28 +820,12 @@ export const translations = {
         role: 'Senior Software Developer · Contract',
         period: 'Nov 2024 - Present · Workforce / Recruiting Platform',
         desc: 'Full-stack development for a workforce and recruiting platform. Design and implementation of frontend/backend functionality, AWS-backed solutions, and AI chatbot agents that improve user interaction and product capability.',
-        testimonial: {
-          quote:
-            'Focused on translating business and product requirements into scalable, production-ready functionality that users can rely on.',
-          author: 'Angel Lambertt',
-          role: 'Senior Software Developer',
-        },
       },
       everis: {
         company: 'Targeted Bioscience, Inc.',
         role: 'Senior Software Engineer · Contract',
         period: 'Aug 2024 - Sep 2025 · Jupiter, Florida · Remote',
         desc: 'Frontend development for cloud-based platforms and Python backend contributions, including microscope image-processing functionality for technical workflows related to pathology and cancer diagnosis.',
-        tesauro: {
-          title: 'Serverless on Google Cloud',
-          desc: 'Designed serverless solutions in GCP to improve performance, reduce operational cost, and support efficient cloud-based processing workflows.',
-        },
-        testimonial: {
-          quote:
-            'Experience in technically detailed environments where reliability, precision, and product-engineering collaboration matter.',
-          author: 'Angel Lambertt',
-          role: 'Senior Software Engineer',
-        },
       },
     },
     linkedinPosts: {

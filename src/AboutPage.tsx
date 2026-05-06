@@ -108,7 +108,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground bg-[length:24px_24px] [background-image:radial-gradient(circle,hsl(var(--dot-grid))_1px,transparent_1px)]">
-      <main className="max-w-2xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
 
         {/* Header */}
         <header className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-10">

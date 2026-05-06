@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useReducer, useRef } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Users, Globe, Bot, Zap, Database, Layout, BadgeCheck, FolderGit2, Sparkles, Download, Github, Package, MessageSquare, Receipt, CalendarCheck, FileText, GitBranch, GitFork, Star, Network, Calendar, Percent, UserCheck, Image, TrendingUp, Timer, SkipForward, ThumbsUp, MessageCircle, Share2, ChevronRight, List, ArrowUp, Brain, Target, Inbox, Compass, GitMerge, CheckCircle } from 'lucide-react'
+import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe, Bot, Zap, BadgeCheck, FolderGit2, Sparkles, Download, Github, FileText, GitFork, Star, TrendingUp, SkipForward, ThumbsUp, MessageCircle, Share2, ChevronRight, List, ArrowUp, CheckCircle } from 'lucide-react'
 import { translations, seo, type Lang } from './i18n'
 import { useHomeSeo } from './articles/use-article-seo'
 import { getTechIcon } from './tech-icons'
@@ -1544,7 +1544,7 @@ function App() {
                       <Zap className="w-4 h-4 text-accent shrink-0" />
                       <span className="text-sm font-semibold group-hover:text-accent transition-colors leading-tight">{item.title}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground pl-6 hidden sm:block">{item.desc}</p>
+                    <p className="text-sm text-muted-foreground pl-6">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1564,27 +1564,6 @@ function App() {
               <p className="text-primary font-medium mb-1">{t.experience.zinkee.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.zinkee.period}</p>
               <p className="text-muted-foreground whitespace-pre-line mb-5">{t.experience.zinkee.desc}</p>
-              <div className="grid md:grid-cols-2 gap-3 mb-5">
-                {t.experience.zinkee.platforms.map((platform) => (
-                  <div key={platform.name} className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <p className="font-display font-semibold text-foreground">{platform.name}</p>
-                      {'link' in platform && platform.link && (
-                        <a
-                          href={externalHref(platform.link)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${platform.name} landing page`}
-                          className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-primary hover:bg-primary/10 transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" aria-hidden="true" />
-                        </a>
-                      )}
-                    </div>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{platform.desc}</p>
-                  </div>
-                ))}
-              </div>
               <ul className="grid md:grid-cols-2 gap-x-6 gap-y-2">
                 {t.experience.zinkee.highlights.map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-muted-foreground">
@@ -1646,224 +1625,6 @@ function App() {
             </div>
           </AnimatedSection>
 
-          {/* Business OS - Full Width Hero Card */}
-          <AnimatedSection delay={0.1} className="mb-8">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/15 via-gold/5 to-transparent border border-gold/30 hover:border-gold/50 transition-colors duration-200 group">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                <div className="flex-1 flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center shrink-0">
-                      <svg viewBox="0 0 200 170" className="w-6 h-6" aria-hidden="true">
-                        <path fill="#FCB400" d="M90.039 12.368 24.079 39.66c-3.667 1.519-3.63 6.729.062 8.192l66.235 26.266a24.58 24.58 0 0 0 18.12 0l66.236-26.266c3.69-1.463 3.729-6.673.062-8.192l-65.96-27.292a24.58 24.58 0 0 0-18.795 0"/>
-                        <path fill="#18BFFF" d="M105.312 88.46v65.617c0 3.12 3.147 5.258 6.048 4.108l73.806-28.648a4.42 4.42 0 0 0 2.79-4.108V59.813c0-3.121-3.147-5.258-6.048-4.108l-73.806 28.648a4.42 4.42 0 0 0-2.79 4.108"/>
-                        <path fill="#F82B60" d="m88.078 91.846-21.904 10.576-2.224 1.075-46.238 22.155c-2.93 1.414-6.672-.722-6.672-3.978V60.088c0-1.178.604-2.195 1.414-2.96a5 5 0 0 1 1.12-.84c1.104-.663 2.68-.84 4.02-.31L87.71 83.76c3.564 1.414 3.844 6.408.368 8.087"/>
-                      </svg>
-                    </div>
-                    <span className="badge px-3 py-1 bg-gold/20 text-gold">Source of Truth</span>
-                  </div>
-                  <h4 className="font-display text-2xl font-bold mb-4">{t.experience.santifer.businessOS.title}</h4>
-                  <p className="text-muted-foreground mb-6">{t.experience.santifer.businessOS.desc}</p>
-                  <ul className="text-sm text-muted-foreground space-y-2">
-                    {t.experience.santifer.businessOS.modules.map((item, i) => {
-                      const icons: Record<string, React.ReactNode> = {
-                        database: <Database className="w-4 h-4" />,
-                        users: <Users className="w-4 h-4" />,
-                        layout: <Layout className="w-4 h-4" />,
-                        package: <Package className="w-4 h-4" />,
-                        messageSquare: <MessageSquare className="w-4 h-4" />,
-                        receipt: <Receipt className="w-4 h-4" />,
-                        calendarCheck: <CalendarCheck className="w-4 h-4" />
-                      }
-                      return (
-                        <li key={i} className="flex items-start gap-3">
-                          <span className="text-gold mt-0.5">{icons[item.icon]}</span>
-                          <span>{item.text}</span>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                  <Link to={t.experience.santifer.caseStudyUrl} className="inline-flex items-center gap-2 mt-auto pt-6 text-sm font-medium text-gold hover:text-gold/80 transition-colors duration-200 group/cta">
-                    <span className="px-4 py-2 rounded-lg bg-gold/10 border border-gold/30 group-hover/cta:bg-gold/20 group-hover/cta:border-gold/50 transition-all duration-200">{t.experience.santifer.businessOS.footer}</span>
-                    <ChevronRight className="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform duration-200" />
-                  </Link>
-                </div>
-                <div className="grid grid-cols-3 lg:flex lg:flex-col gap-2 lg:gap-3 mt-4 lg:mt-0">
-                  {t.experience.santifer.businessOS.metrics.map((metric, i) => (
-                    <div key={i} className="text-center p-2 lg:p-4 rounded-xl bg-background/50 border border-gold/20">
-                      <div className="font-display text-lg lg:text-2xl font-bold text-gold">{metric.value}</div>
-                      <div className="text-[10px] lg:text-xs text-muted-foreground leading-tight">{metric.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Bento Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {/* Large card - AI Agent */}
-            <AnimatedSection delay={0.15} className="col-span-2 row-span-2">
-              <div className="h-full p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40 transition-colors duration-200 group flex flex-col">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <Bot className="w-6 h-6 text-primary" />
-                  </div>
-                  <span className="badge px-3 py-1 bg-primary/10 text-primary">{t.experience.santifer.jacobo.badge}</span>
-                </div>
-                <h4 className="font-display text-xl font-bold mb-2 group-hover:text-primary transition-colors">{t.experience.santifer.jacobo.title}</h4>
-                <p className="text-muted-foreground text-sm mb-4">{t.experience.santifer.jacobo.desc}</p>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  {t.experience.santifer.jacobo.items.map((item, i) => {
-                    const icons: Record<string, React.ReactNode> = {
-                      network: <Network className="w-4 h-4" />,
-                      calendar: <Calendar className="w-4 h-4" />,
-                      percent: <Percent className="w-4 h-4" />,
-                      package: <Package className="w-4 h-4" />,
-                      userCheck: <UserCheck className="w-4 h-4" />
-                    }
-                    return (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary mt-0.5 shrink-0">{icons[item.icon]}</span>
-                        <span>{item.text}</span>
-                      </li>
-                    )
-                  })}
-                </ul>
-                <Link to={t.experience.santifer.jacobo.caseStudyUrl} className="inline-flex items-center gap-2 mt-auto pt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-200 group/cta">
-                  <span className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 group-hover/cta:bg-primary/20 group-hover/cta:border-primary/50 transition-all duration-200">{t.experience.santifer.jacobo.soldWith}</span>
-                  <ChevronRight className="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform duration-200" />
-                </Link>
-                <div className="flex items-center gap-3 pt-4">
-                  <a href={`https://github.com/${t.experience.santifer.jacobo.github}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs text-primary hover:underline">
-                    <Github className="w-4 h-4" />
-                    {lang === 'es' ? 'Ver código' : 'View code'}
-                  </a>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground"><Star className="w-3.5 h-3.5 text-yellow-500" />{t.experience.santifer.jacobo.stars}</span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground"><GitFork className="w-3.5 h-3.5" />{t.experience.santifer.jacobo.forks}</span>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Large card - Web Programática + SEO */}
-            <AnimatedSection delay={0.2} className="col-span-2 row-span-2">
-              <div className="h-full p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 hover:border-accent/40 transition-colors duration-200 group flex flex-col">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                    <Layout className="w-6 h-6 text-accent" />
-                  </div>
-                  <span className="badge px-3 py-1 bg-accent/10 text-accent">{t.experience.santifer.webSeo.badge}</span>
-                </div>
-                <h4 className="font-display text-xl font-bold mb-2 group-hover:text-accent transition-colors">{t.experience.santifer.webSeo.title}</h4>
-                <p className="text-muted-foreground text-sm mb-4">{t.experience.santifer.webSeo.desc}</p>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  {t.experience.santifer.webSeo.items.map((item, i) => {
-                    const icons: Record<string, React.ReactNode> = {
-                      fileText: <FileText className="w-4 h-4" />,
-                      image: <Image className="w-4 h-4" />,
-                      trendingUp: <TrendingUp className="w-4 h-4" />,
-                      gitBranch: <GitBranch className="w-4 h-4" />,
-                      bot: <Bot className="w-4 h-4" />
-                    }
-                    return (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-accent mt-0.5 shrink-0">{icons[item.icon]}</span>
-                        <span>{item.text}</span>
-                      </li>
-                    )
-                  })}
-                </ul>
-                <Link to={t.experience.santifer.webSeo.caseStudyUrl} className="inline-flex items-center gap-2 mt-auto pt-4 text-sm font-medium text-accent hover:text-accent/80 transition-colors duration-200 group/cta">
-                  <span className="px-4 py-2 rounded-lg bg-accent/10 border border-accent/30 group-hover/cta:bg-accent/20 group-hover/cta:border-accent/50 transition-all duration-200">{t.experience.santifer.webSeo.codeAvailable}</span>
-                  <ChevronRight className="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform duration-200" />
-                </Link>
-                <div className="flex items-center gap-3 pt-4">
-                  <a href={`https://github.com/${t.experience.santifer.webSeo.github}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs text-accent hover:underline">
-                    <Github className="w-4 h-4" />
-                    {lang === 'es' ? 'Ver código' : 'View code'}
-                  </a>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground"><Star className="w-3.5 h-3.5 text-yellow-500" />{t.experience.santifer.webSeo.stars}</span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground"><GitFork className="w-3.5 h-3.5" />{t.experience.santifer.webSeo.forks}</span>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* EXIT 2025 - Verde Success para destacar logro/credibilidad */}
-            <AnimatedSection delay={0.25} className="col-span-2">
-              <div className="h-full p-5 rounded-2xl bg-gradient-to-r from-success/10 to-success/5 border border-success/30 hover:border-success/50 transition-colors duration-200">
-                <div className="flex items-center gap-3 mb-2">
-                  <Zap className="w-5 h-5 text-success" />
-                  <span className="font-display font-bold text-success">{t.experience.santifer.exit}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.exitDesc}</p>
-              </div>
-            </AnimatedSection>
-
-            {/* ERP card */}
-            <AnimatedSection delay={0.3}>
-              <Link to={t.experience.santifer.erp.caseStudyUrl} className="block h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 flex flex-col group/card">
-                <Database className="w-5 h-5 text-primary mb-3" />
-                <p className="font-medium text-sm mb-1">{t.experience.santifer.erp.title}</p>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.erp.desc}</p>
-                <div className="flex items-center justify-between mt-auto pt-3">
-                  <span className="text-xs font-medium text-primary">{t.experience.santifer.erp.metric}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/0 group-hover/card:text-primary group-hover/card:translate-x-0.5 transition-all duration-200" />
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* GPTs card */}
-            <AnimatedSection delay={0.35}>
-              <Link to={t.experience.santifer.gpts.caseStudyUrl} className="block h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 flex flex-col group/card">
-                <Bot className="w-5 h-5 text-accent mb-3" />
-                <p className="font-medium text-sm mb-1">{t.experience.santifer.gpts.title}</p>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.gpts.desc}</p>
-                <div className="flex items-center justify-between mt-auto pt-3">
-                  <span className="text-xs font-medium text-primary">{t.experience.santifer.gpts.metric}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/0 group-hover/card:text-primary group-hover/card:translate-x-0.5 transition-all duration-200" />
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* Reservas card */}
-            <AnimatedSection delay={0.4}>
-              <Link to={t.experience.santifer.reservas.caseStudyUrl} className="block h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 flex flex-col group/card">
-                <Timer className="w-5 h-5 text-primary mb-3" />
-                <p className="font-medium text-sm mb-1">{t.experience.santifer.reservas.title}</p>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.reservas.desc}</p>
-                <div className="flex items-center justify-between mt-auto pt-3">
-                  <span className="text-xs font-medium text-accent">{t.experience.santifer.reservas.metric}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/0 group-hover/card:text-primary group-hover/card:translate-x-0.5 transition-all duration-200" />
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* CRM card */}
-            <AnimatedSection delay={0.45}>
-              <Link to={t.experience.santifer.crm.caseStudyUrl} className="block h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 flex flex-col group/card">
-                <Users className="w-5 h-5 text-accent mb-3" />
-                <p className="font-medium text-sm mb-1">{t.experience.santifer.crm.title}</p>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.crm.desc}</p>
-                <div className="flex items-center justify-between mt-auto pt-3">
-                  <span className="text-xs font-medium text-primary">{t.experience.santifer.crm.metric}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/0 group-hover/card:text-primary group-hover/card:translate-x-0.5 transition-all duration-200" />
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* GenAI Marketing card */}
-            <AnimatedSection delay={0.5}>
-              <Link to={t.experience.santifer.genAI.caseStudyUrl} className="block h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 flex flex-col group/card">
-                <Sparkles className="w-5 h-5 text-primary mb-3" />
-                <p className="font-medium text-sm mb-1">{t.experience.santifer.genAI.title}</p>
-                <p className="text-sm text-muted-foreground">{t.experience.santifer.genAI.desc}</p>
-                <div className="flex items-center justify-between mt-auto pt-3">
-                  <span className="text-xs font-medium text-accent">{t.experience.santifer.genAI.metric}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/0 group-hover/card:text-primary group-hover/card:translate-x-0.5 transition-all duration-200" />
-                </div>
-              </Link>
-            </AnimatedSection>
-          </div>
-
           {/* SkillMil */}
           <AnimatedSection delay={0.5} className="mt-16">
             <div className="mb-6">
@@ -1880,23 +1641,6 @@ function App() {
               <p className="text-accent font-medium mb-1">{t.experience.lico.role}</p>
               <p className="text-sm text-muted-foreground mb-4">{t.experience.lico.period}</p>
               <p className="text-muted-foreground">{t.experience.lico.desc}</p>
-
-              {/* Testimonial */}
-              <div className="block group">
-                <blockquote className="mt-6 p-4 rounded-xl bg-accent/5 border border-accent/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
-                  <p className="text-sm text-muted-foreground italic mb-4">
-                    "{t.experience.lico.testimonial.quote}"
-                  </p>
-                  <footer className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center font-display font-bold">AL</div>
-                    <div className="flex-1">
-                      <span className="text-sm font-medium text-foreground block">{t.experience.lico.testimonial.author}</span>
-                      <span className="text-xs text-muted-foreground">{t.experience.lico.testimonial.role}</span>
-                    </div>
-                    <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />
-                  </footer>
-                </blockquote>
-              </div>
             </div>
           </AnimatedSection>
 
@@ -1914,34 +1658,6 @@ function App() {
               <p className="text-primary font-medium mb-1">{t.experience.everis.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.everis.period}</p>
               <p className="text-muted-foreground">{t.experience.everis.desc}</p>
-            </div>
-            <div className="mt-6 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
-                  <Bot className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-display font-bold mb-2">{t.experience.everis.tesauro.title}</h4>
-                  <p className="text-sm text-muted-foreground">{t.experience.everis.tesauro.desc}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial */}
-            <div className="block group">
-              <blockquote className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
-                <p className="text-sm text-muted-foreground italic mb-4">
-                  "{t.experience.everis.testimonial.quote}"
-                </p>
-                <footer className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/15 text-primary flex items-center justify-center font-display font-bold">AL</div>
-                  <div className="flex-1">
-                    <span className="text-sm font-medium text-foreground block">{t.experience.everis.testimonial.author}</span>
-                    <span className="text-xs text-muted-foreground">{t.experience.everis.testimonial.role}</span>
-                  </div>
-                  <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />
-                </footer>
-              </blockquote>
             </div>
           </AnimatedSection>
         </div>
@@ -1969,90 +1685,6 @@ function App() {
                 </svg>
                 {t.projects.githubLink.split('/').pop()}
               </a>
-            </div>
-          </AnimatedSection>
-
-          {/* AI Agent Infrastructure — premium narrative header */}
-          <AnimatedSection delay={0.03} className="mb-12">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/15 via-gold/5 to-transparent border border-gold/30 hover:border-gold/50 transition-colors duration-200 group relative overflow-hidden">
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-gold/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="flex items-start justify-between gap-4 mb-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center shrink-0">
-                      <Network className="w-6 h-6 text-gold" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-2xl font-bold text-foreground">{t.projects.agentInfra.title}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground mt-1">{t.projects.agentInfra.subtitle}</p>
-                    </div>
-                  </div>
-                </div>
-                {(() => {
-                  const iconMap: Record<string, React.ReactNode> = {
-                    brain: <Brain className="w-4 h-4" />,
-                    target: <Target className="w-4 h-4" />,
-                    inbox: <Inbox className="w-4 h-4" />,
-                    compass: <Compass className="w-4 h-4" />,
-                    gitMerge: <GitMerge className="w-4 h-4" />,
-                    layout: <Layout className="w-4 h-4" />,
-                    briefcase: <Briefcase className="w-4 h-4" />,
-                    users: <Users className="w-4 h-4" />,
-                  }
-                  const lifeOs = t.projects.agentInfra.agents.find(a => a.name === 'life-os')!
-                  const others = t.projects.agentInfra.agents.filter(a => a.name !== 'life-os')
-                  return (
-                    <>
-                      {/* Life OS — full-width orchestrator */}
-                      <div className="relative mb-3 p-4 rounded-xl bg-gold/15 border border-gold/40">
-                        <div className="absolute -top-2 left-4 px-2 py-0.5 rounded-full bg-gold/20 border border-gold/40 text-[9px] uppercase tracking-widest text-gold font-semibold">Orquestador</div>
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-gold/25 text-gold flex items-center justify-center shrink-0">
-                            <Brain className="w-6 h-6" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-baseline gap-2 flex-wrap">
-                              <span className="font-display font-bold text-lg text-foreground">{lifeOs.name}</span>
-                              <span className="text-[10px] uppercase tracking-wider text-gold">{lifeOs.tag}</span>
-                            </div>
-                            <p className="text-sm text-muted-foreground mt-0.5">{lifeOs.desc}</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Other 6 agents — satellites */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        {others.map((agent, i) => {
-                          const isOpen = agent.tag.includes('open source')
-                          return (
-                            <div
-                              key={i}
-                              className={`flex items-start gap-3 p-3 rounded-lg border transition-colors ${
-                                isOpen ? 'bg-accent/5 border-accent/20 hover:border-accent/40' : 'bg-card/60 border-border/50 hover:border-border'
-                              }`}
-                            >
-                              <div className={`w-8 h-8 rounded-md flex items-center justify-center shrink-0 ${
-                                isOpen ? 'bg-accent/10 text-accent' : 'bg-muted text-muted-foreground'
-                              }`}>
-                                {iconMap[agent.icon]}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-baseline gap-2 flex-wrap">
-                                  <span className="font-semibold text-sm text-foreground">{agent.name}</span>
-                                  <span className={`text-[10px] uppercase tracking-wider ${
-                                    isOpen ? 'text-accent' : 'text-muted-foreground/70'
-                                  }`}>{agent.tag}</span>
-                                </div>
-                                <p className="text-xs text-muted-foreground mt-0.5">{agent.desc}</p>
-                              </div>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    </>
-                  )
-                })()}
-              </div>
             </div>
           </AnimatedSection>
 
@@ -2463,7 +2095,8 @@ function App() {
         </div>
       </section>
 
-      {/* Sharing — Teaching + LinkedIn */}
+      {/* Sharing — Teaching + LinkedIn — DISABLED (set the `false &&` guard below to true to revive) */}
+      {false && (
       <section id="speaking" className="py-16 md:py-24 bg-muted/30" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 800px' }}>
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
@@ -2475,8 +2108,8 @@ function App() {
             </h2>
           </AnimatedSection>
 
-          {/* X Post — Garry Tan hero card */}
-          {t.xPost && (
+          {/* X Post — Garry Tan hero card — DISABLED (set ENABLE_X_POST to true to revive) */}
+          {false && t.xPost && (
             <AnimatedSection delay={0.1}>
               <div className="mb-8">
                 <div
@@ -2766,11 +2399,12 @@ function App() {
           )}
         </div>
       </section>
+      )}
 
-      {/* Education & Certifications */}
+      {/* Education & Certifications & Languages */}
       <section id="education" className="py-16 md:py-24" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1000px' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-3 gap-10">
             {/* Education */}
             <div>
               <AnimatedSection>
@@ -2891,6 +2525,30 @@ function App() {
                 })}
               </div>
             </div>
+
+            {/* Languages */}
+            <div>
+              <AnimatedSection>
+                <h2 className="font-display text-2xl font-semibold mb-8 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Globe className="w-5 h-5 text-primary" />
+                  </div>
+                  {t.skills.languages}
+                </h2>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <div className="p-5 rounded-2xl bg-card border border-border space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>{t.skills.spanish}</span>
+                    <span className="text-sm text-primary font-medium">{t.skills.native}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>{t.skills.english}</span>
+                    <span className="text-sm text-muted-foreground">{t.skills.professional}</span>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
@@ -2907,24 +2565,9 @@ function App() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <AnimatedSection delay={0.1}>
-              <h3 className="font-display font-semibold mb-4 flex items-center gap-2">
-                <Globe className="w-4 h-4 text-primary" />
-                {t.skills.languages}
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span>{t.skills.spanish}</span>
-                  <span className="text-sm text-primary font-medium">{t.skills.native}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>{t.skills.english}</span>
-                  <span className="text-sm text-muted-foreground">{t.skills.professional}</span>
-                </div>
-              </div>
-
-              <h3 className="font-display font-semibold mb-4 mt-8">{t.skills.soft}</h3>
+          <AnimatedSection delay={0.1}>
+            <div className="mb-8">
+              <h3 className="font-display font-semibold mb-4">{t.skills.soft}</h3>
               <div className="flex flex-wrap gap-2">
                 {t.skills.softSkills.map((skill) => (
                   <span key={skill} className="px-3 py-1 rounded-full text-sm bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors cursor-default">
@@ -2932,34 +2575,34 @@ function App() {
                   </span>
                 ))}
               </div>
-            </AnimatedSection>
+            </div>
+          </AnimatedSection>
 
-            <AnimatedSection delay={0.2} className="md:col-span-3">
-              <h3 className="font-display font-semibold mb-4">{t.techStack.title}</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {t.techStack.categories.map((cat) => (
-                  <div key={cat.name} className="p-4 rounded-xl bg-card border border-border">
-                    <span className="text-xs font-medium text-primary uppercase tracking-wide">{cat.name}</span>
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      {cat.items.map((item) => {
-                        const icon = getTechIcon(item)
-                        return (
-                          <span key={item} className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-xs bg-muted text-foreground">
-                            {icon && (
-                              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill={icon.color} aria-hidden="true">
-                                <path d={icon.path} />
-                              </svg>
-                            )}
-                            {item}
-                          </span>
-                        )
-                      })}
-                    </div>
+          <AnimatedSection delay={0.2}>
+            <h3 className="font-display font-semibold mb-4">{t.techStack.title}</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {t.techStack.categories.map((cat) => (
+                <div key={cat.name} className="p-4 rounded-xl bg-card border border-border">
+                  <span className="text-xs font-medium text-primary uppercase tracking-wide">{cat.name}</span>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {cat.items.map((item) => {
+                      const icon = getTechIcon(item)
+                      return (
+                        <span key={item} className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-xs bg-muted text-foreground">
+                          {icon && (
+                            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill={icon.color} aria-hidden="true">
+                              <path d={icon.path} />
+                            </svg>
+                          )}
+                          {item}
+                        </span>
+                      )
+                    })}
                   </div>
-                ))}
-              </div>
-            </AnimatedSection>
-          </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

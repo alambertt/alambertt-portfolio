@@ -48,6 +48,8 @@ linkedin-post.md
 # Test artifacts
 test-results/
 chatbot/.playwright-mcp/
+.playwright-mcp/
+snapshot-home.md
 
 # Stray screenshots in root
 /*.png
