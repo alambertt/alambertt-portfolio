@@ -4,7 +4,7 @@ import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRig
 import { aboutContent, type AboutLang } from './about-i18n'
 
 const SOCIAL_LINKS = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/alambertt' },
   { name: 'GitHub', url: 'https://github.com/alambertt' },
 ]
 
@@ -74,7 +74,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
           { '@type': 'EducationalOrganization', name: 'Universidad de Ciencias Informaticas' },
         ],
         sameAs: [
-          'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9',
+          'https://www.linkedin.com/in/alambertt',
           'https://github.com/alambertt',
         ],
         worksFor: {

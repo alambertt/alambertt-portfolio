@@ -2631,7 +2631,7 @@ function App() {
                 {t.cta.contact}
               </a>
               <a
-                href="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
+                href="https://www.linkedin.com/in/alambertt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"

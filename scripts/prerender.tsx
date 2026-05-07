@@ -195,7 +195,7 @@ const aboutJsonLd = {
       { '@type': 'EducationalOrganization', name: 'Universidad de Ciencias Informaticas' },
     ],
     sameAs: [
-      'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9',
+      'https://www.linkedin.com/in/alambertt',
       'https://github.com/alambertt',
     ],
     worksFor: { '@type': 'Organization', name: 'Argus' },
@@ -333,7 +333,7 @@ function buildArticlePage(
     const articleMetaTags = [
       `<meta property="article:published_time" content="${seoMeta.datePublished}" />`,
       `<meta property="article:modified_time" content="${seoMeta.dateModified}" />`,
-      `<meta property="article:author" content="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9" />`,
+      `<meta property="article:author" content="https://www.linkedin.com/in/alambertt" />`,
       `<meta property="article:tag" content="${esc(seoMeta.articleTags)}" />`,
     ].join('\n    ');
     result = result.replace('</head>', `    ${articleMetaTags}\n  </head>`);

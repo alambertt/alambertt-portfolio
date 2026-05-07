@@ -685,7 +685,7 @@ export default function JacoboAgent({ lang = 'en' }: { lang?: Lang }) {
           heading={t.cta.heading}
           body={t.cta.body}
           ctaLabel={`${t.cta.label} →`}
-          ctaHref="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
+          ctaHref="https://www.linkedin.com/in/alambertt"
           external
           secondaryLabel={`${(t.cta as any).labelSecondary} →`}
           secondaryHref="mailto:hola@santifer.io"
@@ -777,7 +777,7 @@ export default function JacoboAgent({ lang = 'en' }: { lang?: Lang }) {
           heading={(t as any).ctaAfterEnterprise.heading}
           body={t.cta.body}
           ctaLabel={`${t.cta.label} →`}
-          ctaHref="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
+          ctaHref="https://www.linkedin.com/in/alambertt"
           external
           secondaryLabel={`${(t.cta as any).labelSecondary} →`}
           secondaryHref="mailto:hola@santifer.io"
@@ -829,7 +829,7 @@ export default function JacoboAgent({ lang = 'en' }: { lang?: Lang }) {
           heading={(t as any).ctaAfterDownloads.heading}
           body=""
           ctaLabel={`${t.cta.label} →`}
-          ctaHref="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
+          ctaHref="https://www.linkedin.com/in/alambertt"
           external
           secondaryLabel={`${(t.cta as any).labelSecondary} →`}
           secondaryHref="mailto:hola@santifer.io"

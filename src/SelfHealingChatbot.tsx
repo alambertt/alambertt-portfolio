@@ -513,7 +513,7 @@ export default function SelfHealingChatbot({ lang = 'en' }: { lang?: Lang }) {
           heading={t.cta.heading}
           body={t.cta.body}
           ctaLabel={t.cta.label}
-          ctaHref="https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9"
+          ctaHref="https://www.linkedin.com/in/alambertt"
           external
           secondaryLabel={t.cta.labelSecondary}
           secondaryHref="mailto:hola@santifer.io"

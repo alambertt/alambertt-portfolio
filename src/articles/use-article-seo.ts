@@ -74,7 +74,7 @@ export function useArticleSeo(opts: ArticleSeoOpts) {
     upsertMeta('property', 'og:locale:alternate', lang === 'es' ? 'en_US' : 'es_ES')
     upsertMeta('property', 'article:published_time', publishedTime)
     if (modifiedTime) upsertMeta('property', 'article:modified_time', modifiedTime)
-    upsertMeta('property', 'article:author', 'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9')
+    upsertMeta('property', 'article:author', 'https://www.linkedin.com/in/alambertt')
     upsertMeta('property', 'article:tag', articleTags)
     if (image) upsertMeta('property', 'og:image', image)
 

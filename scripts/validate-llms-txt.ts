@@ -41,7 +41,7 @@ const PROOF_POINTS: ProofPoint[] = [
   },
   {
     source: 'contact links',
-    terms: ['alambertt1991@icloud.com', 'angel-lambertt-pierra-a813801a9', 'github.com/alambertt'],
+    terms: ['alambertt1991@icloud.com', 'linkedin.com/in/alambertt', 'github.com/alambertt'],
   },
   {
     source: 'technical profile',

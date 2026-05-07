@@ -48,7 +48,7 @@ const PERSON = {
   url: 'https://santifer.io',
   jobTitle: 'Head of Applied AI',
   sameAs: [
-    'https://www.linkedin.com/in/angel-lambertt-pierra-a813801a9',
+    'https://www.linkedin.com/in/alambertt',
     'https://github.com/santifer',
     'https://x.com/santifer',
     'https://dev.to/santifer',
