@@ -37,7 +37,6 @@ export const aboutContent = {
     certificationsHeading: 'Certificaciones',
     certifications: [
       { org: 'Google', items: ['Kubernetes in Google Cloud'] },
-      { org: 'Ratatype', items: ['Typing Certificate'] },
       { org: 'EF SET', items: ['English Certificate 59/100 (B2 Upper Intermediate)'] },
     ],
     educationHeading: 'Educación',
@@ -99,7 +98,6 @@ export const aboutContent = {
     certificationsHeading: 'Certifications',
     certifications: [
       { org: 'Google', items: ['Kubernetes in Google Cloud'] },
-      { org: 'Ratatype', items: ['Typing Certificate'] },
       { org: 'EF SET', items: ['English Certificate 59/100 (B2 Upper Intermediate)'] },
     ],
     educationHeading: 'Education',

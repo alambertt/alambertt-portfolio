@@ -409,13 +409,6 @@ export const translations = {
           url: '',
         },
         {
-          year: '2024',
-          title: 'Typing Certificate',
-          org: 'Ratatype',
-          logo: 'generic',
-          url: '',
-        },
-        {
           year: '2023',
           title: 'EF SET English Certificate 59/100 (B2 Upper Intermediate)',
           org: 'EF SET',
@@ -897,13 +890,6 @@ export const translations = {
           title: 'Kubernetes in Google Cloud',
           org: 'Google',
           logo: 'googlecloud',
-          url: '',
-        },
-        {
-          year: '2024',
-          title: 'Typing Certificate',
-          org: 'Ratatype',
-          logo: 'generic',
           url: '',
         },
         {
