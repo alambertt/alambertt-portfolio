@@ -40,7 +40,7 @@ export const translations = {
         { icon: 'briefcase', label: 'Mi camino', href: '#experience' },
         { icon: 'folder', label: 'Lo que construyo', href: '#projects' },
         { icon: 'mail', label: 'Hablemos', href: '#contact' },
-        { icon: 'bot', label: 'Pregúntame', href: '#chat', highlight: true },
+        // { icon: 'bot', label: 'Pregúntame', href: '#chat', highlight: true }, // chatbot UI hidden
       ],
       skills: [
         'TypeScript / JavaScript',
@@ -531,7 +531,7 @@ export const translations = {
         { icon: 'briefcase', label: 'My path', href: '#experience' },
         { icon: 'folder', label: 'What I build', href: '#projects' },
         { icon: 'mail', label: "Let's talk", href: '#contact' },
-        { icon: 'bot', label: 'Ask me', href: '#chat', highlight: true },
+        // { icon: 'bot', label: 'Ask me', href: '#chat', highlight: true }, // chatbot UI hidden
       ],
       skills: [
         'TypeScript / JavaScript',
