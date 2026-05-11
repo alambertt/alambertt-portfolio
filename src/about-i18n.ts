@@ -22,7 +22,7 @@ export const aboutContent = {
     roles: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'Solutions Architect'],
     timelineHeading: 'Trayectoria',
     timeline: [
-      { period: 'May 2025 - Presente', role: 'Senior Software Engineer', company: 'Argus Enterprises Serv Group', desc: 'Plataformas AWS DoD-compliant, CDK/IaC, CI/CD, monitoring, seguridad, frontend/backend y FastAPI' },
+      { period: 'May 2025 - Presente', role: 'Senior Software Engineer', company: 'Argus Enterprises Serv Group', desc: 'Dos plataformas enterprise/ERP para clientes industriales: AWS, CDK/IaC, CI/CD, monitoring, seguridad, frontend/backend y FastAPI' },
       { period: 'Nov 2025 - Presente', role: 'Cofounder', company: 'Relampo', desc: 'SaaS distribuido, tooling Go y arquitectura AWS' },
       { period: 'Nov 2024 - Presente', role: 'Senior Software Developer', company: 'SkillMil', desc: 'Full-stack, AWS y agentes chatbot con IA' },
       { period: 'Aug 2024 - Sep 2025', role: 'Senior Software Engineer', company: 'Targeted Bioscience', desc: 'Frontend cloud, Python, GCP y procesamiento de imágenes' },
@@ -30,7 +30,7 @@ export const aboutContent = {
     ],
     projectsHeading: 'Proyectos',
     projects: [
-      { name: 'Argus Enterprises Serv Group', desc: 'Faros y Morpheus: plataformas AWS DoD-compliant con CDK/IaC, CI/CD, monitoring y seguridad', href: '/#projects' },
+      { name: 'Argus Enterprises Serv Group', desc: 'Dos plataformas enterprise/ERP para clientes industriales: AWS con CDK/IaC, CI/CD, monitoring y seguridad', href: '/#projects' },
       { name: 'Relampo SaaS Platform', desc: 'SaaS distribuido, performance tooling en Go y arquitectura cloud', href: '/#projects' },
       { name: 'Recruiting Platform Features', desc: 'Funcionalidades full-stack, servicios AWS y chatbots con IA para SkillMil', href: '/#projects' },
     ],
@@ -84,7 +84,7 @@ export const aboutContent = {
     roles: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'Solutions Architect'],
     timelineHeading: 'Experience',
     timeline: [
-      { period: 'May 2025 - Present', role: 'Senior Software Engineer', company: 'Argus Enterprises Serv Group', desc: 'DoD-compliant AWS platforms, CDK/IaC, CI/CD, monitoring, security, frontend/backend, and FastAPI' },
+      { period: 'May 2025 - Present', role: 'Senior Software Engineer', company: 'Argus Enterprises Serv Group', desc: 'Two enterprise/ERP platforms for industrial customers: AWS, CDK/IaC, CI/CD, monitoring, security, frontend/backend, and FastAPI' },
       { period: 'Nov 2025 - Present', role: 'Cofounder', company: 'Relampo', desc: 'Distributed SaaS, Go tooling, and AWS architecture' },
       { period: 'Nov 2024 - Present', role: 'Senior Software Developer', company: 'SkillMil', desc: 'Full-stack, AWS, and AI chatbot agents' },
       { period: 'Aug 2024 - Sep 2025', role: 'Senior Software Engineer', company: 'Targeted Bioscience', desc: 'Cloud frontend, Python, GCP, and image processing' },
@@ -92,7 +92,7 @@ export const aboutContent = {
     ],
     projectsHeading: 'Projects',
     projects: [
-      { name: 'Argus Enterprises Serv Group', desc: 'Faros and Morpheus: DoD-compliant AWS platforms with CDK/IaC, CI/CD, monitoring, and security', href: '/#projects' },
+      { name: 'Argus Enterprises Serv Group', desc: 'Two enterprise/ERP platforms for industrial customers: AWS with CDK/IaC, CI/CD, monitoring, and security', href: '/#projects' },
       { name: 'Relampo SaaS Platform', desc: 'Distributed SaaS, Go performance tooling, and cloud architecture', href: '/#projects' },
       { name: 'Recruiting Platform Features', desc: 'Full-stack features, AWS services, and AI chatbots for SkillMil', href: '/#projects' },
     ],

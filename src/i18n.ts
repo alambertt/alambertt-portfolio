@@ -169,20 +169,8 @@ export const translations = {
           title: 'Argus Enterprises Serv Group',
           badge: 'Contract',
           badgeBuilding: 'Actual',
-          desc: 'Trabajo como Senior Software Engineer sobre dos plataformas bajo Argus, combinando arquitectura cloud, delivery full-stack y seguridad para entornos DoD-compliant.',
-          subprojects: [
-            {
-              name: 'Faros',
-              desc: 'Plataforma AWS con infraestructura CDK/IaC, CI/CD, múltiples entornos, monitoring/alerting y hardening de seguridad.',
-              link: 'https://www.argusenterprises.com/faros',
-            },
-            {
-              name: 'Morpheus',
-              desc: 'Entrega frontend/backend y sistemas FastAPI sobre arquitectura AWS, con foco en confiabilidad, mantenibilidad y requisitos de seguridad.',
-              link: 'https://www.argusenterprises.com/morpheus',
-            },
-          ],
-          tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security', 'DoD Compliance'],
+          desc: 'Senior Software Engineer en dos plataformas enterprise/ERP para clientes industriales. Combino arquitectura cloud, delivery full-stack y hardening de seguridad.',
+          tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security'],
           link: 'argusenterprises.com',
         },
         {
@@ -288,9 +276,9 @@ export const translations = {
         location: 'West Palm Beach, Florida · Remoto',
         role: 'Senior Software Engineer · Contract',
         period: 'May 2025 - Presente',
-        desc: 'Trabajo en dos plataformas bajo Argus Enterprises Serv Group, combinando arquitectura AWS, infraestructura como código, seguridad y desarrollo full-stack para entornos DoD-compliant.',
+        desc: 'Senior Software Engineer en dos plataformas enterprise/ERP para clientes industriales, combinando arquitectura AWS, infraestructura como código, seguridad y desarrollo full-stack.',
         highlights: [
-          'Arquitectura y despliegue de infraestructura AWS con CDK/IaC para entornos DoD-compliant business-critical',
+          'Arquitectura y despliegue de infraestructura AWS con CDK/IaC para dos plataformas business-critical',
           'CI/CD desde cero y hardening de seguridad en aplicación e infraestructura cloud',
           'Entrega full-stack en sistemas serverless, microservicios y FastAPI con stakeholders remotos',
         ],
@@ -660,20 +648,8 @@ export const translations = {
           title: 'Argus Enterprises Serv Group',
           badge: 'Contract',
           badgeBuilding: 'Current',
-          desc: 'Senior Software Engineer work across two Argus platforms, combining cloud architecture, full-stack delivery, and security for DoD-compliant environments.',
-          subprojects: [
-            {
-              name: 'Faros',
-              desc: 'AWS platform with CDK/IaC infrastructure, CI/CD, multiple environments, monitoring/alerting, and security hardening.',
-              link: 'https://www.argusenterprises.com/faros',
-            },
-            {
-              name: 'Morpheus',
-              desc: 'Frontend/backend delivery and FastAPI systems on AWS architecture, focused on reliability, maintainability, and security requirements.',
-              link: 'https://www.argusenterprises.com/morpheus',
-            },
-          ],
-          tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security', 'DoD Compliance'],
+          desc: 'Senior Software Engineer work across two enterprise/ERP platforms for industrial customers. Combines cloud architecture, full-stack delivery, and security hardening.',
+          tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security'],
           link: 'argusenterprises.com',
         },
         {
@@ -779,9 +755,9 @@ export const translations = {
         location: 'West Palm Beach, Florida · Remote',
         role: 'Senior Software Engineer · Contract',
         period: 'May 2025 - Present',
-        desc: 'Work across two platforms under Argus Enterprises Serv Group, combining AWS architecture, infrastructure as code, security, and full-stack delivery for DoD-compliant environments.',
+        desc: 'Work across two enterprise/ERP platforms for industrial customers, combining AWS architecture, infrastructure as code, security, and full-stack delivery.',
         highlights: [
-          'Architect and deploy AWS infrastructure with CDK/IaC for DoD-compliant, business-critical environments',
+          'Architect and deploy AWS infrastructure with CDK/IaC for two business-critical platforms',
           'Build CI/CD from scratch and harden security across application and cloud',
           'Deliver full-stack work across serverless, microservices, and FastAPI with remote stakeholders',
         ],
