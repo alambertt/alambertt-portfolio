@@ -19,7 +19,6 @@ export const aboutContent = {
       'Trabajo con TypeScript, JavaScript, Python, Go, React, Angular, Node.js, FastAPI, AWS, GCP, AWS CDK, serverless, MySQL, MongoDB y DynamoDB.',
       'Mi experiencia reciente incluye infraestructura AWS y seguridad en Argus, cofundación técnica de Relampo, desarrollo full-stack en SkillMil, plataformas cloud para Targeted Bioscience y sistemas IoT en Costa Farms.',
     ],
-    seeking: '',
     roles: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'Solutions Architect'],
     timelineHeading: 'Trayectoria',
     timeline: [
@@ -44,10 +43,6 @@ export const aboutContent = {
     education: [
       'Universidad de Ciencias Informáticas, Cuba — Bachelor\'s Degree in Computer Science (2014)',
     ],
-    pressHeading: 'Otros',
-    press: [
-      { title: 'Senior Full Stack Software Engineer profile', publisher: 'Angel Lambertt', date: '2026', href: '/#experience' },
-    ],
     communityHeading: 'Stack',
     community: [
       { title: 'TypeScript, JavaScript, Python, Go', platform: 'Languages', href: '/#tech' },
@@ -56,9 +51,10 @@ export const aboutContent = {
     ],
     faqHeading: 'Preguntas frecuentes',
     faq: [
-      { q: '¿Quién es Angel Lambertt?', a: 'Angel Lambertt es un Senior Full Stack Software Engineer basado en Jupiter, Florida, con 9+ años de experiencia en desarrollo web, backend, cloud engineering e IA aplicada.' },
-      { q: '¿Qué tipo de roles busca?', a: 'Roles senior remotos o compatibles con Florida en full-stack engineering, cloud engineering y solution architecture.' },
-      { q: '¿Cómo contactarlo?', a: 'Email: alambertt1991@icloud.com.' },
+      { q: '¿Quién es Angel Lambertt?', a: 'Senior Full Stack Software Engineer basado en Jupiter, Florida. Nacido en Cuba, con 9+ años construyendo aplicaciones web, productos cloud-native en AWS y software con IA aplicada.' },
+      { q: '¿Qué roles busca?', a: 'Roles remotos en US: Senior Full Stack Engineer, Senior Cloud Engineer o Solutions Architect. El trabajo híbrido funciona si está a distancia razonable de Palm Beach, FL.' },
+      { q: '¿Cómo contactarlo?', a: 'Email: alambertt1991@icloud.com. También en LinkedIn (linkedin.com/in/alambertt) y GitHub (github.com/alambertt).' },
+      { q: '¿Cómo entró en el mundo del software?', a: 'Creció en Cuba y no tocó una computadora hasta la high school, donde aprendió Pascal para ejercicios de programación de concurso. La programación web lo enganchó cuando entendió que podía poner algo en un servidor al alcance de cualquiera con internet. Este oficio sostuvo a su familia durante la crisis económica en Cuba y eventualmente lo trajo a los Estados Unidos.' },
     ],
     connectHeading: 'Conectar',
     email: 'alambertt1991@icloud.com',
@@ -81,7 +77,6 @@ export const aboutContent = {
       'I work with TypeScript, JavaScript, Python, Go, React, Angular, Node.js, FastAPI, AWS, GCP, AWS CDK, serverless, MySQL, MongoDB, and DynamoDB.',
       'Recent work includes AWS infrastructure and security at Argus, technical cofounder work at Relampo, full-stack development at SkillMil, cloud platforms for Targeted Bioscience, and IoT systems at Costa Farms.',
     ],
-    seeking: '',
     roles: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'Solutions Architect'],
     timelineHeading: 'Experience',
     timeline: [
@@ -106,10 +101,6 @@ export const aboutContent = {
     education: [
       'Universidad de Ciencias Informáticas, Cuba — Bachelor\'s Degree in Computer Science (2014)',
     ],
-    pressHeading: 'Other',
-    press: [
-      { title: 'Senior Full Stack Software Engineer profile', publisher: 'Angel Lambertt', date: '2026', href: '/#experience' },
-    ],
     communityHeading: 'Stack',
     community: [
       { title: 'TypeScript, JavaScript, Python, Go', platform: 'Languages', href: '/#tech' },
@@ -118,9 +109,10 @@ export const aboutContent = {
     ],
     faqHeading: 'Frequently Asked Questions',
     faq: [
-      { q: 'Who is Angel Lambertt?', a: 'Angel Lambertt is a Senior Full Stack Software Engineer based in Jupiter, Florida, with 9+ years of experience across web development, backend engineering, cloud engineering, and applied AI.' },
-      { q: 'What roles is he targeting?', a: 'Senior remote or Florida-compatible roles in full-stack engineering, cloud engineering, and solution architecture.' },
-      { q: 'How can I contact him?', a: 'Email: alambertt1991@icloud.com.' },
+      { q: 'Who is Angel Lambertt?', a: 'Senior Full Stack Software Engineer based in Jupiter, Florida. Cuban-born, with 9+ years building web applications, cloud-native products on AWS, and AI-augmented software.' },
+      { q: 'What roles is he targeting?', a: 'Remote roles in the US: Senior Full Stack Engineer, Senior Cloud Engineer, or Solutions Architect. Hybrid works if it is within commuting distance of Palm Beach, FL.' },
+      { q: 'How can I contact him?', a: 'Email: alambertt1991@icloud.com. Also on LinkedIn (linkedin.com/in/alambertt) and GitHub (github.com/alambertt).' },
+      { q: 'How did he get into software?', a: 'He grew up in Cuba and did not touch a computer until high school, where he learned Pascal for programming contests. Web development hooked him when he realized he could put something on a server anyone with internet could reach. That craft sustained his family through Cuba\'s economic crisis and eventually brought him to the United States.' },
     ],
     connectHeading: 'Connect',
     email: 'alambertt1991@icloud.com',

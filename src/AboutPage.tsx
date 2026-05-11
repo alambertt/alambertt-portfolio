@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRight, Clock, Newspaper, HelpCircle, Users } from 'lucide-react'
+import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRight, Clock, HelpCircle, Users } from 'lucide-react'
 import { aboutContent, type AboutLang } from './about-i18n'
 
 const SOCIAL_LINKS = [
@@ -153,20 +153,6 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
           ))}
         </section>
 
-        {/* Seeking — hidden when empty */}
-        {t.seeking && t.roles.length > 0 && (
-        <section className="mb-10 p-4 rounded-lg bg-primary/5 border border-primary/20">
-          <p className="text-sm font-medium text-primary mb-2">{t.seeking}</p>
-          <div className="flex flex-wrap gap-2">
-            {t.roles.map((role) => (
-              <span key={role} className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                {role}
-              </span>
-            ))}
-          </div>
-        </section>
-        )}
-
         {/* Timeline */}
         <section className="mb-10">
           <h2 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -240,29 +226,6 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
               <li key={item} className="text-sm text-muted-foreground">{item}</li>
             ))}
           </ul>
-        </section>
-
-        {/* Press */}
-        <section className="mb-10">
-          <h2 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-            <Newspaper className="w-4 h-4 text-primary" />
-            {t.pressHeading}
-          </h2>
-          {t.press.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-3 rounded-lg bg-card border border-border hover:border-primary/30 transition-all group"
-            >
-              <div>
-                <p className="font-medium text-foreground text-sm group-hover:text-primary transition-colors">{item.title}</p>
-                <p className="text-xs text-muted-foreground">{item.publisher} · {item.date}</p>
-              </div>
-              <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-            </a>
-          ))}
         </section>
 
         {/* Community */}
