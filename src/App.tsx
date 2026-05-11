@@ -1222,7 +1222,7 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
   }, [typewriterComplete])
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-16 md:py-24">
+    <section ref={sectionRef} id="about" className="relative py-16 md:pt-24 md:pb-2 bg-background">
       {/* Vignette horizontal: tapa puntos en el centro, se ven en los bordes */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'linear-gradient(90deg, transparent 0%, hsl(var(--background)) 25%, hsl(var(--background)) 75%, transparent 100%)',
@@ -1331,17 +1331,17 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
               bot: <Bot className="w-4 h-4" />
             }
             const isHighlight = 'highlight' in item && item.highlight
-            const handleClick = (e: React.MouseEvent) => {
-              if (item.href === '#chat') {
-                e.preventDefault()
-                window.dispatchEvent(new Event('openChat'))
-              }
-            }
+            // Chat click handler removed with the `#chat` nav item. Re-add when chat UI returns:
+            // const handleClick = (e: React.MouseEvent) => {
+            //   if (item.href === '#chat') {
+            //     e.preventDefault()
+            //     window.dispatchEvent(new Event('openChat'))
+            //   }
+            // }
             return (
               <a
                 key={item.href}
                 href={item.href}
-                onClick={handleClick}
                 className={isHighlight
                   ? "flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme text-white border border-transparent hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 active:brightness-95 transition-all duration-200 text-sm font-medium shadow-lg shadow-primary/25"
                   : "flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 text-sm font-medium"
@@ -1515,6 +1515,29 @@ function App() {
 
       {/* Summary - Con storytelling integrado */}
       <StorySection t={t} />
+
+      {/* Story teaser — pull-quote linking to /about for the full personal story */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="max-w-3xl mx-auto px-6">
+          <Link
+            to={lang === 'en' ? '/about' : '/sobre-mi'}
+            className="group block p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-1 self-stretch bg-primary/40 rounded-full group-hover:bg-primary transition-colors" />
+              <div className="flex-1">
+                <p className="font-display text-base md:text-lg text-foreground leading-relaxed italic mb-4">
+                  "{t.story.teaser.quote}"
+                </p>
+                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
+                  {t.story.teaser.cta}
+                  <ChevronRight className="w-4 h-4" />
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       {/* Experience - Con preámbulo de competencias */}
       <section id="experience" className="py-16 md:py-24 bg-muted/30" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 2000px' }}>

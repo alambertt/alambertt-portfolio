@@ -51,6 +51,10 @@ export const translations = {
         'AI Chatbots',
       ],
       skipButton: 'Saltar intro',
+      teaser: {
+        quote: 'Nací en Cuba y no toqué una computadora hasta la high school. Este oficio sostuvo a mi familia durante la crisis y eventualmente me trajo a los Estados Unidos.',
+        cta: 'Lee mi historia',
+      },
     },
     taglines: [] as readonly string[],
     location: 'Jupiter, Florida · USA remoto',
@@ -535,6 +539,10 @@ export const translations = {
         'AI Chatbots',
       ],
       skipButton: 'Skip intro',
+      teaser: {
+        quote: "I grew up in Cuba and didn't touch a computer until high school. That craft eventually kept my family fed and brought me to the United States.",
+        cta: 'Read my story',
+      },
     },
     taglines: [] as readonly string[],
     location: 'Jupiter, Florida · USA remote',
