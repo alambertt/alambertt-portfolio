@@ -201,20 +201,22 @@ const app = (
             <Route path="/about" element={<AboutPage lang="en" />} />
             <Route path="/privacidad" element={<PrivacyPolicy lang="es" />} />
             <Route path="/privacy" element={<PrivacyPolicy lang="en" />} />
-            {articleRegistry.map((article) => {
+            {/* Article routes hidden — components preserved in src/articles/ and src/<Article>.tsx for future personalization */}
+            {/* {articleRegistry.map((article) => {
               const ArticleComponent = articleComponents[article.id]
               return [
                 <Route key={`${article.id}-es`} path={`/${article.slugs.es}`} element={<ArticleComponent lang="es" />} />,
                 <Route key={`${article.id}-en`} path={`/${article.slugs.en}`} element={<ArticleComponent lang="en" />} />,
               ]
-            })}
+            })} */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </PageTransition>
       {/* Floating chat disabled until Angel-specific integration is ready. */}
       {ENABLE_FLOATING_CHAT && <GlobalChat />}
-      <GlobalMusic />
+      {/* Ambient music button hidden — implementation preserved in src/MusicToggle.tsx */}
+      {/* <GlobalMusic /> */}
       <Analytics />
       <SpeedInsights />
     </BrowserRouter>
