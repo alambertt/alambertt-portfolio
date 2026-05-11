@@ -14,6 +14,7 @@ export const aboutContent = {
     location: 'Jupiter, Florida, United States',
     lastUpdated: 'Abril 2026',
     bio: [
+      'Nací en Cuba. Desde pequeño me interesaron las matemáticas, pero no toqué una computadora hasta la high school. La primera vez fue para aprender Pascal y resolver ejercicios de programación de concurso. Después entendí que podía escribir algo en mi máquina y ponerlo en un servidor al alcance de cualquiera con internet. La programación web se convirtió en lo que quería hacer. Este oficio sostuvo a mi familia durante la crisis económica en Cuba, y eventualmente me trajo a los Estados Unidos. Lo que más me sigue gustando hoy es lo mismo de entonces: me siento con alguien que tiene un problema real de negocio, trabajamos juntos la abstracción, y lo llevo a código que pueden usar.',
       'Senior Full Stack Software Engineer con 9+ años de experiencia construyendo aplicaciones web escalables, productos cloud-native y software de negocio en entornos freelance, contract y full-time.',
       'Trabajo con TypeScript, JavaScript, Python, Go, React, Angular, Node.js, FastAPI, AWS, GCP, AWS CDK, serverless, MySQL, MongoDB y DynamoDB.',
       'Mi experiencia reciente incluye infraestructura AWS y seguridad en Argus, cofundación técnica de Relampo, desarrollo full-stack en SkillMil, plataformas cloud para Targeted Bioscience y sistemas IoT en Costa Farms.',
@@ -75,6 +76,7 @@ export const aboutContent = {
     location: 'Jupiter, Florida, United States',
     lastUpdated: 'April 2026',
     bio: [
+      "I grew up in Cuba. I liked math from a young age, but I didn't touch a computer until high school. The first one I used was for learning Pascal to solve programming contest exercises. Then I understood I could write something on my machine and put it on a server anyone with internet could reach. Web development became the thing I wanted to do. That craft kept my family fed through Cuba's economic crisis, and eventually it brought me to the United States. What I still like most today is the same as then: I sit down with someone who has a real business problem, we work out the abstraction, and I turn it into code they can use.",
       'Senior Full Stack Software Engineer with 9+ years of experience building scalable web applications, cloud-native products, and business software across freelance, contract, and full-time environments.',
       'I work with TypeScript, JavaScript, Python, Go, React, Angular, Node.js, FastAPI, AWS, GCP, AWS CDK, serverless, MySQL, MongoDB, and DynamoDB.',
       'Recent work includes AWS infrastructure and security at Argus, technical cofounder work at Relampo, full-stack development at SkillMil, cloud platforms for Targeted Bioscience, and IoT systems at Costa Farms.',

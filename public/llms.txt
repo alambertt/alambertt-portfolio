@@ -24,19 +24,20 @@ Angel Lambertt is a senior full stack engineer with 9+ years of experience build
 
 ## Experience Highlights
 
-- Argus Enterprises Serv Group: senior software engineering across two enterprise/ERP platforms for industrial customers, involving AWS CDK/IaC infrastructure, CI/CD, multiple environments, monitoring/alerting, security hardening, FastAPI backend systems, and frontend/backend delivery.
-- Relampo: backend/editor/control-plane engineering, workflow systems, release processes, CLI QA artifacts, and production hardening.
-- SkillMill: AI/backend platform work involving chat systems, Slack workflows, deployment verification, and OpenAI model integrations.
-- Targeted Bioscience, Esencial, Costa Farms, Evemundo, and Biprintzble: web application, automation, cloud, and software engineering experience across multiple business domains.
+- Argus Enterprises Serv Group (Senior Software Engineer, Contract, May 2025 - Present): senior software engineering across two enterprise/ERP platforms for industrial customers. AWS CDK/IaC infrastructure, CI/CD on GitHub Actions, AWS-native monitoring and alerting, security hardening, FastAPI services, and frontend/backend delivery.
+- Relampo (Cofounder, Nov 2025 - Present): cofounded an early-stage distributed SaaS startup; designed the AWS architecture from scratch and built a Go CLI tool for performance testing and system validation.
+- SkillMil (Senior Software Developer, Contract, Nov 2024 - Present): full-stack engineering on a workforce and recruiting platform. Built AI-powered chatbot agents that handle conversational workflows in the product, plus AWS-backed backend services.
+- Targeted Bioscience (Senior Software Engineer, Contract, Aug 2024 - Sep 2025): frontend work for a cloud platform supporting diagnostic workflows; Python image processing for microscope images in cancer pathology; serverless workloads on GCP to cut processing cost and speed up throughput.
+- Costa Farms (Full Stack Engineer, Freelance, Jul 2022 - May 2024): Angular interfaces for a smart greenhouse platform that monitored operations and IoT-connected systems for automation and remote monitoring.
 
 ## Education
 
-- Universidad de Ciencias Informaticas: Software engineering and computer science background.
+- Universidad de Ciencias Informáticas, Cuba (Bachelor's Degree in Computer Science, 2014).
 
 ## Certifications
 
-- AWS Certified Cloud Practitioner
-- Google Cloud certification and cloud training
+- Kubernetes in Google Cloud (Google, Apr 2024).
+- EF SET English Certificate 59/100, B2 Upper Intermediate (EF SET, Jul 2023).
 
 ## Preferred Search Summary
 
