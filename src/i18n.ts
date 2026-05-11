@@ -438,7 +438,7 @@ export const translations = {
     },
     cta: {
       title: '¿Hablamos?',
-      desc: 'Busco un rol remoto (EU / USA) donde pueda liderar producto, desbloquear equipos con automatización y entregar resultados que se puedan medir.',
+      desc: 'Busco un rol remoto en US. Quiero llevar la arquitectura, enviar features full-stack y también la parte de AWS.',
       contact: 'Contactar',
     },
     ui: {
@@ -922,7 +922,7 @@ export const translations = {
     },
     cta: {
       title: "Let's talk",
-      desc: 'Looking for a remote role (EU / USA) where I can own product delivery, unblock teams through automation, and ship results you can measure.',
+      desc: 'Looking for a remote role in the US. I want to own the architecture, ship full-stack features, and handle the AWS side.',
       contact: 'Contact',
     },
     ui: {
