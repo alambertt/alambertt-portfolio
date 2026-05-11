@@ -9,7 +9,7 @@ import GlobalNav from './GlobalNav.tsx'
 import { articleRegistry, getEsSlugs } from './articles/registry'
 
 const FloatingChat = lazy(() => import('./FloatingChat'))
-const MusicToggle = lazy(() => import('./MusicToggle'))
+// const MusicToggle = lazy(() => import('./MusicToggle')) // disabled with <GlobalMusic />; widget code preserved in src/MusicToggle.tsx
 const OpsDashboard = lazy(() => import('./ops/OpsDashboard'))
 const PrivacyPolicy = lazy(() => import('./PrivacyPolicy'))
 const AboutPage = lazy(() => import('./AboutPage'))
@@ -89,17 +89,18 @@ function GlobalChat() {
   )
 }
 
-function GlobalMusic() {
-  const { pathname } = useLocation()
-  const [hydrated, setHydrated] = useState(false)
-  useEffect(() => setHydrated(true), [])
-  if (!hydrated || pathname.startsWith('/ops')) return null
-  return (
-    <Suspense fallback={null}>
-      <MusicToggle />
-    </Suspense>
-  )
-}
+// Wrapper preserved for future re-enable. Underlying widget lives in src/MusicToggle.tsx.
+// function GlobalMusic() {
+//   const { pathname } = useLocation()
+//   const [hydrated, setHydrated] = useState(false)
+//   useEffect(() => setHydrated(true), [])
+//   if (!hydrated || pathname.startsWith('/ops')) return null
+//   return (
+//     <Suspense fallback={null}>
+//       <MusicToggle />
+//     </Suspense>
+//   )
+// }
 
 function ConditionalNav() {
   const { pathname } = useLocation()
