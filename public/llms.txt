@@ -24,7 +24,7 @@ Angel Lambertt is a senior full stack engineer with 9+ years of experience build
 
 ## Experience Highlights
 
-- Argus Enterprises Serv Group: senior software engineering across Faros and Morpheus, two DoD-compliant AWS platforms involving CDK/IaC infrastructure, CI/CD, multiple environments, monitoring/alerting, security hardening, FastAPI backend systems, and frontend/backend delivery.
+- Argus Enterprises Serv Group: senior software engineering across two enterprise/ERP platforms for industrial customers, involving AWS CDK/IaC infrastructure, CI/CD, multiple environments, monitoring/alerting, security hardening, FastAPI backend systems, and frontend/backend delivery.
 - Relampo: backend/editor/control-plane engineering, workflow systems, release processes, CLI QA artifacts, and production hardening.
 - SkillMill: AI/backend platform work involving chat systems, Slack workflows, deployment verification, and OpenAI model integrations.
 - Targeted Bioscience, Esencial, Costa Farms, Evemundo, and Biprintzble: web application, automation, cloud, and software engineering experience across multiple business domains.
