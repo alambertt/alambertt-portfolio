@@ -170,6 +170,18 @@ export const translations = {
           badge: 'Contract',
           badgeBuilding: 'Actual',
           desc: 'Senior Software Engineer en dos plataformas enterprise/ERP para clientes industriales. Combino arquitectura cloud, delivery full-stack y hardening de seguridad.',
+          subprojects: [
+            {
+              name: 'Plataforma A',
+              desc: 'Plataforma AWS con infraestructura CDK/IaC, CI/CD, múltiples entornos, monitoring/alerting y hardening de seguridad.',
+              link: 'https://www.argusenterprises.com/faros',
+            },
+            {
+              name: 'Plataforma B',
+              desc: 'Entrega frontend/backend y sistemas FastAPI sobre arquitectura AWS, con foco en confiabilidad, mantenibilidad y requisitos de seguridad.',
+              link: 'https://www.argusenterprises.com/morpheus',
+            },
+          ],
           tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security'],
           link: 'argusenterprises.com',
         },
@@ -649,6 +661,18 @@ export const translations = {
           badge: 'Contract',
           badgeBuilding: 'Current',
           desc: 'Senior Software Engineer work across two enterprise/ERP platforms for industrial customers. Combines cloud architecture, full-stack delivery, and security hardening.',
+          subprojects: [
+            {
+              name: 'Platform A',
+              desc: 'AWS platform with CDK/IaC infrastructure, CI/CD, multiple environments, monitoring/alerting, and security hardening.',
+              link: 'https://www.argusenterprises.com/faros',
+            },
+            {
+              name: 'Platform B',
+              desc: 'Frontend/backend delivery and FastAPI systems on AWS architecture, focused on reliability, maintainability, and security requirements.',
+              link: 'https://www.argusenterprises.com/morpheus',
+            },
+          ],
           tech: ['AWS', 'AWS CDK', 'CI/CD', 'FastAPI', 'Security'],
           link: 'argusenterprises.com',
         },
