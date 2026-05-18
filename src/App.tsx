@@ -1283,7 +1283,7 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
             animate={typewriterComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
             transition={{ duration: 0.6, delay: typewriterComplete ? 0.1 : 0, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <p className={`text-base md:text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto transition-opacity duration-[2500ms] ease-in-out ${textDimmed ? (textRevealed ? 'opacity-50' : 'opacity-15') : 'opacity-100'}`}>
+            <p className={`text-base md:text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto transition-opacity duration-[2500ms] ease-in-out ${textDimmed && !textRevealed ? 'opacity-15' : 'opacity-100'}`}>
               {t.story.why}
             </p>
           </motion.div>
@@ -1293,7 +1293,7 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
               // Spotlight: lines 0 and 2 light up with finalReveal, line 1 stays as background
               const isSpotlit = i === 0 || i === 2
               const dimOpacity = textDimmed
-                ? (isSpotlit ? (finalReveal ? 'opacity-100' : 'opacity-15') : (textRevealed ? 'opacity-50' : 'opacity-15'))
+                ? (isSpotlit ? (finalReveal ? 'opacity-100' : 'opacity-15') : (textRevealed ? 'opacity-100' : 'opacity-15'))
                 : 'opacity-100'
 
               return (
@@ -1344,7 +1344,7 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
                 href={item.href}
                 className={isHighlight
                   ? "flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme text-white border border-transparent hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 active:brightness-95 transition-all duration-200 text-sm font-medium shadow-lg shadow-primary/25"
-                  : "flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 text-sm font-medium"
+                  : "pill-hover-gradient flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border text-sm font-medium"
                 }
               >
                 {icons[item.icon]}
@@ -2141,7 +2141,7 @@ function App() {
                 >
                   {/* Santiago — two column layout like Garry Tan */}
                   <div className="flex gap-4 mb-8">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full shrink-0 bg-gradient-theme text-white flex items-center justify-center font-display font-bold text-xl md:text-2xl">AL</div>
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full shrink-0 bg-gradient-to-br from-primary to-accent text-primary-foreground flex items-center justify-center font-display font-bold text-xl md:text-2xl">AL</div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap mb-1">
                         <span className="text-base md:text-lg font-bold text-foreground">Angel Lambertt | Full Stack Engineer</span>
@@ -2251,7 +2251,7 @@ function App() {
                   className="flex flex-col p-5 rounded-2xl bg-card border border-border/50 border-t-2 border-t-[#FF4500] hover:border-border transition-colors group h-full"
                 >
                   <div className="flex gap-3">
-                    <div className="w-10 h-10 rounded-full shrink-0 mt-0.5 bg-gradient-theme text-white flex items-center justify-center font-display font-bold text-xs">AL</div>
+                    <div className="w-10 h-10 rounded-full shrink-0 mt-0.5 bg-gradient-to-br from-primary to-accent text-primary-foreground flex items-center justify-center font-display font-bold text-xs">AL</div>
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
                         <p className="text-sm text-foreground leading-relaxed">{rp.hook}<span className="text-muted-foreground">...</span> <span className="text-[#FF4500] group-hover:text-[#FF4500] transition-colors">ver más</span></p>

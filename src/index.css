@@ -110,6 +110,9 @@ button, a, [role="button"], summary { cursor: pointer; }
     /* Gradient colors for chat/buttons */
     --gradient-from: 187 86% 53%; /* cyan-400 */
     --gradient-to: 270 91% 65%;   /* purple-500 */
+    /* Text-only gradient — AA contrast against light bg */
+    --gradient-text-from: 187 74% 28%;
+    --gradient-text-to: 270 70% 38%;
     /* Semantic accent colors */
     --gold: 43 76% 38%;
     --success: 142 72% 29%;
@@ -144,6 +147,8 @@ button, a, [role="button"], summary { cursor: pointer; }
       --card-foreground: 0 0% 93%;
       --gradient-from: 187 86% 53%;
       --gradient-to: 270 91% 78%;
+      --gradient-text-from: 187 86% 53%;
+      --gradient-text-to: 270 91% 78%;
       --gold: 45 97% 49%;
       --success: 142 71% 45%;
       --tool: 187 92% 50%;
@@ -177,6 +182,8 @@ button, a, [role="button"], summary { cursor: pointer; }
     --card-foreground: 0 0% 93%;
     --gradient-from: 187 86% 53%;
     --gradient-to: 270 91% 78%;
+    --gradient-text-from: 187 86% 53%;
+    --gradient-text-to: 270 91% 78%;
     /* Semantic accent colors */
     --gold: 45 97% 49%;
     --success: 142 71% 45%;
@@ -210,6 +217,8 @@ button, a, [role="button"], summary { cursor: pointer; }
     --card-foreground: 240 10% 4%;
     --gradient-from: 187 86% 53%;
     --gradient-to: 270 91% 65%;
+    --gradient-text-from: 187 74% 28%;
+    --gradient-text-to: 270 70% 38%;
     --gold: 43 76% 38%;
     --success: 142 72% 29%;
     --tool: 187 72% 30%;
@@ -475,10 +484,26 @@ button, a, [role="button"], summary { cursor: pointer; }
   .from-gradient { --tw-gradient-from: hsl(var(--gradient-from)); }
   .to-gradient { --tw-gradient-to: hsl(var(--gradient-to)); }
   .text-gradient-theme {
-    background-image: linear-gradient(to right, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--gradient-text-from, var(--gradient-from))),
+      hsl(var(--gradient-text-to, var(--gradient-to)))
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  /* Pill nav hover — subtle gradient tint matching brand */
+  .pill-hover-gradient {
+    transition: border-color 200ms ease;
+  }
+  .pill-hover-gradient:hover {
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--gradient-from) / 0.12),
+      hsl(var(--gradient-to) / 0.12)
+    );
+    border-color: hsl(var(--accent) / 0.45);
   }
   .shadow-gradient {
     --tw-shadow-color: hsl(var(--gradient-to) / 0.25);
