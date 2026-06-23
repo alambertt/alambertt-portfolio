@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from './site-config'
+
 export const seo = {
   es: {
     title:
@@ -18,7 +20,7 @@ export const translations = {
     greeting: 'Ingeniero senior creando productos full-stack y cloud-native.',
     greetingRoles: ['Fullstack Developer', 'AI Solutions Builder', 'Cloud Engineer'],
     pillLabels: ['Fullstack', 'AI Solutions', 'Cloud'],
-    email: 'alambertt1991@icloud.com',
+    email: CONTACT_EMAIL,
     role: '',
     story: {
       context: '+9+ años construyendo+ software end-to-end.',
@@ -506,7 +508,7 @@ export const translations = {
     greeting: 'Senior engineer building full-stack and cloud-native products.',
     greetingRoles: ['Fullstack Developer', 'AI Solutions Builder', 'Cloud Engineer'],
     pillLabels: ['Fullstack', 'AI Solutions', 'Cloud'],
-    email: 'alambertt1991@icloud.com',
+    email: CONTACT_EMAIL,
     role: '',
     story: {
       context: '+9+ years building+ software end-to-end.',

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArticleLayout } from './articles/components'
+import { CONTACT_EMAIL } from './site-config'
 
 const content = {
   es: {
@@ -44,7 +45,7 @@ const content = {
       {
         heading: 'Contacto',
         body: 'Para cualquier consulta sobre privacidad, puedes escribir a:',
-        email: 'alambertt1991@icloud.com',
+        email: CONTACT_EMAIL,
       },
     ],
     backHome: 'Volver al inicio',
@@ -90,7 +91,7 @@ const content = {
       {
         heading: 'Contact',
         body: 'For any privacy-related inquiries, you can write to:',
-        email: 'alambertt1991@icloud.com',
+        email: CONTACT_EMAIL,
       },
     ],
     backHome: 'Back to home',

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRight, Clock, HelpCircle, Users } from 'lucide-react'
 import { aboutContent, type AboutLang } from './about-i18n'
+import { MAILTO_EMAIL } from './site-config'
 
 const SOCIAL_LINKS = [
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/alambertt' },
@@ -53,7 +54,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
         alternateName: ['Angel Lambertt', 'alambertt'],
         url: SITE_URL,
         image: `${SITE_URL}/angel-avatar.webp`,
-        email: 'mailto:alambertt1991@icloud.com',
+        email: MAILTO_EMAIL,
         jobTitle: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'AI Product Engineer'],
         knowsAbout: [
           { '@type': 'Thing', name: 'Full Stack Software Engineering' },

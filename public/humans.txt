@@ -1,7 +1,7 @@
 /* TEAM */
 Builder: Angel Lambertt
 Role: Senior Full Stack Software Engineer
-Contact: alambertt1991@icloud.com
+Contact: angel@lambertt.tech
 Location: Jupiter, Florida, United States
 LinkedIn: https://www.linkedin.com/in/alambertt
 GitHub: https://github.com/alambertt

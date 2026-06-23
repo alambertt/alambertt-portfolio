@@ -7,6 +7,7 @@ import './index.css'
 import App from './App.tsx'
 import GlobalNav from './GlobalNav.tsx'
 import { articleRegistry, getEsSlugs } from './articles/registry'
+import { CONTACT_EMAIL } from './site-config'
 
 const FloatingChat = lazy(() => import('./FloatingChat'))
 // const MusicToggle = lazy(() => import('./MusicToggle')) // disabled with <GlobalMusic />; widget code preserved in src/MusicToggle.tsx
@@ -138,7 +139,7 @@ console.log(`%c${ASCII_ART}`, 'color: #f97316; font-size: 12px; font-family: mon
 console.log('%c Most people scroll. You inspect. I like that. ', 'background: #f97316; color: #1a1a1a; font-size: 14px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
 console.log('%cThe %cbest %cwork %cis %cinvisible.', 'color: #94a3b8; font-size: 13px;', 'color: #7e8d9d; font-size: 13px;', 'color: #687882; font-size: 13px;', 'color: #526268; font-size: 13px;', 'color: #3d4d52; font-size: 13px;')
 console.log('%cYou just found some of it.', 'color: #94a3b8; font-size: 13px;')
-console.log('%c I build the details. Let\'s solve something hard → alambertt1991@icloud.com ', 'background: #f97316; color: #1a1a1a; font-size: 13px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
+console.log(`%c I build the details. Let's solve something hard → ${CONTACT_EMAIL} `, 'background: #f97316; color: #1a1a1a; font-size: 13px; font-weight: bold; padding: 4px 8px; border-radius: 3px;')
 
 // Debug API for technical recruiters — type window.__alambertt in console
 Object.defineProperty(window, '__alambertt', {
@@ -148,7 +149,7 @@ Object.defineProperty(window, '__alambertt', {
     cloud: 'AWS + Google Cloud Platform + serverless architecture',
     render: 'Pre-rendered HTML + critical CSS inlined + client hydration',
     perf: () => { const n = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming; console.table({ TTFB: `${Math.round(n.responseStart - n.requestStart)}ms`, DOMContentLoaded: `${Math.round(n.domContentLoadedEventEnd - n.startTime)}ms`, Load: `${Math.round(n.loadEventEnd - n.startTime)}ms` }); },
-    hire_me: 'alambertt1991@icloud.com',
+    hire_me: CONTACT_EMAIL,
   }),
   configurable: false,
 })

@@ -27,6 +27,7 @@ import AboutPage from '../src/AboutPage.tsx';
 import { aboutContent } from '../src/about-i18n.ts';
 import PrivacyPolicy from '../src/PrivacyPolicy.tsx';
 import { seo } from '../src/i18n.ts';
+import { MAILTO_EMAIL } from '../src/site-config.ts';
 import { n8nContent } from '../src/n8n-i18n.ts';
 import { jacoboContent } from '../src/jacobo-i18n.ts';
 import { businessOsContent } from '../src/business-os-i18n.ts';
@@ -174,7 +175,7 @@ const aboutJsonLd = {
     alternateName: ['Angel Lambertt', 'alambertt'],
     url: SITE_URL,
     image: `${SITE_URL}/angel-avatar.webp`,
-    email: 'mailto:alambertt1991@icloud.com',
+    email: MAILTO_EMAIL,
     jobTitle: ['Senior Full Stack Software Engineer', 'Cloud Engineer', 'AI Product Engineer'],
     knowsAbout: [
       { '@type': 'Thing', name: 'Full Stack Software Engineering' },

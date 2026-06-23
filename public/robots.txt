@@ -1,6 +1,6 @@
 # Most bots crawl. The best ones read llms.txt → /llms.txt
 #
-# Built by Angel Lambertt — alambertt1991@icloud.com
+# Built by Angel Lambertt — angel@lambertt.tech
 # Stack: React 19 · TypeScript · Vite · Vercel
 
 User-agent: *

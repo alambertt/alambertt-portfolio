@@ -13,6 +13,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { CONTACT_EMAIL } from '../src/site-config.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -41,7 +42,7 @@ const PROOF_POINTS: ProofPoint[] = [
   },
   {
     source: 'contact links',
-    terms: ['alambertt1991@icloud.com', 'linkedin.com/in/alambertt', 'github.com/alambertt'],
+    terms: [CONTACT_EMAIL, 'linkedin.com/in/alambertt', 'github.com/alambertt'],
   },
   {
     source: 'technical profile',
@@ -72,6 +73,36 @@ for (const pp of PROOF_POINTS) {
     console.error(
       `❌ llms.txt missing content from [${pp.source}]:\n` +
       `   Missing terms: ${missing.map(t => `"${t}"`).join(', ')}\n`
+    )
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Static assets must stay in sync with the canonical contact email in
+// src/site-config.ts. This catches drift when the email is changed in the
+// config but the static files are not updated.
+// ---------------------------------------------------------------------------
+const STATIC_EMAIL_FILES = [
+  'public/humans.txt',
+  'public/robots.txt',
+  'index.html',
+] as const
+
+for (const relPath of STATIC_EMAIL_FILES) {
+  const filePath = resolve(root, relPath)
+  let fileContent: string
+  try {
+    fileContent = readFileSync(filePath, 'utf-8')
+  } catch {
+    errors++
+    console.error(`❌ ${relPath} not found`)
+    continue
+  }
+  if (!fileContent.includes(CONTACT_EMAIL)) {
+    errors++
+    console.error(
+      `❌ ${relPath} does not contain the canonical contact email "${CONTACT_EMAIL}".\n` +
+      `   Update it to match src/site-config.ts.\n`
     )
   }
 }

@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from './site-config'
+
 export type AboutLang = 'es' | 'en'
 
 export const aboutContent = {
@@ -53,11 +55,11 @@ export const aboutContent = {
     faq: [
       { q: '¿Quién es Angel Lambertt?', a: 'Senior Full Stack Software Engineer basado en Jupiter, Florida. Nacido en Cuba, con 9+ años construyendo aplicaciones web, productos cloud-native en AWS y software con IA aplicada.' },
       { q: '¿Qué roles busca?', a: 'Roles remotos en US: Senior Full Stack Engineer, Senior Cloud Engineer o Solutions Architect. El trabajo híbrido funciona si está a distancia razonable de Palm Beach, FL.' },
-      { q: '¿Cómo contactarlo?', a: 'Email: alambertt1991@icloud.com. También en LinkedIn (linkedin.com/in/alambertt) y GitHub (github.com/alambertt).' },
+      { q: '¿Cómo contactarlo?', a: `Email: ${CONTACT_EMAIL}. También en LinkedIn (linkedin.com/in/alambertt) y GitHub (github.com/alambertt).` },
       { q: '¿Cómo entró en el mundo del software?', a: 'Creció en Cuba y no tocó una computadora hasta la high school, donde aprendió Pascal para ejercicios de programación de concurso. La programación web lo enganchó cuando entendió que podía poner algo en un servidor al alcance de cualquiera con internet. Este oficio sostuvo a su familia durante la crisis económica en Cuba y eventualmente lo trajo a los Estados Unidos.' },
     ],
     connectHeading: 'Conectar',
-    email: 'alambertt1991@icloud.com',
+    email: CONTACT_EMAIL,
   },
   en: {
     slug: 'about',
@@ -111,10 +113,10 @@ export const aboutContent = {
     faq: [
       { q: 'Who is Angel Lambertt?', a: 'Senior Full Stack Software Engineer based in Jupiter, Florida. Cuban-born, with 9+ years building web applications, cloud-native products on AWS, and AI-augmented software.' },
       { q: 'What roles is he targeting?', a: 'Remote roles in the US: Senior Full Stack Engineer, Senior Cloud Engineer, or Solutions Architect. Hybrid works if it is within commuting distance of Palm Beach, FL.' },
-      { q: 'How can I contact him?', a: 'Email: alambertt1991@icloud.com. Also on LinkedIn (linkedin.com/in/alambertt) and GitHub (github.com/alambertt).' },
+      { q: 'How can I contact him?', a: `Email: ${CONTACT_EMAIL}. Also on LinkedIn (linkedin.com/in/alambertt) and GitHub (github.com/alambertt).` },
       { q: 'How did he get into software?', a: 'He grew up in Cuba and did not touch a computer until high school, where he learned Pascal for programming contests. Web development hooked him when he realized he could put something on a server anyone with internet could reach. That craft sustained his family through Cuba\'s economic crisis and eventually brought him to the United States.' },
     ],
     connectHeading: 'Connect',
-    email: 'alambertt1991@icloud.com',
+    email: CONTACT_EMAIL,
   },
 } as const
