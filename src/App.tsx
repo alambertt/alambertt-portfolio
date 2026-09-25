@@ -1396,6 +1396,8 @@ function CertLogo({ logo }: { logo: string }) {
   return logos[logo] || null
 }
 
+const SHOW_CERTIFICATIONS = false
+
 function App() {
   const location = useLocation()
   const lang: Lang = location.pathname === '/en' ? 'en' : 'es'
@@ -2410,7 +2412,7 @@ function App() {
       {/* Education & Certifications & Languages */}
       <section id="education" className="py-16 md:py-24" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1000px' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className={`grid gap-10 ${SHOW_CERTIFICATIONS ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
             {/* Education */}
             <div>
               <AnimatedSection>
@@ -2493,7 +2495,8 @@ function App() {
               </div>
             </div>
 
-            {/* Certifications */}
+            {SHOW_CERTIFICATIONS && (
+            /* Certifications */
             <div>
               <AnimatedSection>
                 <h2 className="font-display text-2xl font-semibold mb-8 flex items-center gap-3">
@@ -2531,6 +2534,7 @@ function App() {
                 })}
               </div>
             </div>
+            )}
 
             {/* Languages */}
             <div>

@@ -10,6 +10,7 @@ const SOCIAL_LINKS = [
 ]
 
 const SITE_URL = 'https://www.alambertt.dev'
+const SHOW_CERTIFICATIONS = false
 
 export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
   const t = aboutContent[lang]
@@ -67,10 +68,12 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
           { '@type': 'SoftwareApplication', name: 'FastAPI', url: 'https://fastapi.tiangolo.com' },
           { '@type': 'SoftwareApplication', name: 'AWS CDK', url: 'https://aws.amazon.com/cdk/' },
         ],
+        ...(SHOW_CERTIFICATIONS ? {
         hasCredential: [
           { '@type': 'EducationalOccupationalCredential', name: 'AWS Certified Cloud Practitioner', recognizedBy: { '@type': 'Organization', name: 'Amazon Web Services' } },
           { '@type': 'EducationalOccupationalCredential', name: 'Google Cloud training and certification', recognizedBy: { '@type': 'Organization', name: 'Google Cloud' } },
         ],
+        } : {}),
         alumniOf: [
           { '@type': 'EducationalOrganization', name: 'Universidad de Ciencias Informaticas' },
         ],
@@ -196,7 +199,8 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
           </div>
         </section>
 
-        {/* Certifications */}
+        {SHOW_CERTIFICATIONS && (
+        /* Certifications */
         <section className="mb-10">
           <h2 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
             <Award className="w-4 h-4 text-primary" />
@@ -215,6 +219,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
             ))}
           </div>
         </section>
+        )}
 
         {/* Education */}
         <section className="mb-10">
