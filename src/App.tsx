@@ -1585,7 +1585,6 @@ function App() {
                 <span className="text-sm text-muted-foreground">{t.experience.zinkee.location}</span>
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.zinkee.role}</p>
-              <p className="text-sm text-muted-foreground mb-2">{t.experience.zinkee.period}</p>
               <p className="text-muted-foreground whitespace-pre-line mb-5">{t.experience.zinkee.desc}</p>
               <ul className="grid md:grid-cols-2 gap-x-6 gap-y-2">
                 {t.experience.zinkee.highlights.map((item) => (
@@ -1614,7 +1613,6 @@ function App() {
                 <span className="text-sm text-muted-foreground">{t.experience.santifer.location}</span>
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.santifer.role}</p>
-              <p className="text-sm text-muted-foreground mb-4">{t.experience.santifer.period}</p>
               <ul className="text-sm text-muted-foreground space-y-1 mb-6">
                 {t.experience.santifer.highlights.map((h, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -1662,7 +1660,6 @@ function App() {
                 <span className="text-sm text-muted-foreground">{t.experience.lico.location}</span>
               </div>
               <p className="text-accent font-medium mb-1">{t.experience.lico.role}</p>
-              <p className="text-sm text-muted-foreground mb-4">{t.experience.lico.period}</p>
               <p className="text-muted-foreground">{t.experience.lico.desc}</p>
             </div>
           </AnimatedSection>
@@ -1679,7 +1676,6 @@ function App() {
                 </div>
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.everis.role}</p>
-              <p className="text-sm text-muted-foreground mb-2">{t.experience.everis.period}</p>
               <p className="text-muted-foreground">{t.experience.everis.desc}</p>
             </div>
           </AnimatedSection>
@@ -1739,10 +1735,7 @@ function App() {
             const contentDigest = allProjects.find(p => p.title === 'Argus Enterprises Serv Group')!
             const lifeOS = allProjects.find(p => p.title === 'Relampo SaaS Platform')!
             const careerOps = allProjects.find(p => p.title === 'Recruiting Platform Features')!
-            const santiferIo = allProjects.find(p => p.title === 'Angel Portfolio')!
             const selfHealingChatbot = allProjects.find(p => p.title === 'Diagnostic Workflow Tools')!
-            // Tools that depend on the portfolio surface
-            const claudeEye = allProjects.find(p => p.title === 'Cloud Backend Work')!
             const claudeable = allProjects.find(p => p.title === 'Internal Operations Systems')!
             const claudePulse = allProjects.find(p => p.title === 'Smart Greenhouse Platform')!
 
@@ -1759,9 +1752,7 @@ function App() {
               contentDigest: useRef<HTMLDivElement>(null),
               lifeOS: useRef<HTMLDivElement>(null),
               careerOps: useRef<HTMLDivElement>(null),
-              santiferIo: useRef<HTMLDivElement>(null),
               selfHealingChatbot: useRef<HTMLDivElement>(null),
-              claudeEye: useRef<HTMLDivElement>(null),
               claudeable: useRef<HTMLDivElement>(null),
               claudePulse: useRef<HTMLDivElement>(null),
             }
@@ -1804,29 +1795,18 @@ function App() {
                 // En móvil: conexiones verticales simples (tarjetas apiladas)
                 // En desktop: grafo complejo con conexiones horizontales y diagonales
                 const connections: Connection[] = isMobile ? [
-                  // Móvil: flujo vertical simple
+                  { from: cardRefs.contentDigest, fromEdge: 'bottom', to: cardRefs.lifeOS, toEdge: 'top' },
                   { from: cardRefs.lifeOS, fromEdge: 'bottom', to: cardRefs.careerOps, toEdge: 'top' },
-                  { from: cardRefs.careerOps, fromEdge: 'bottom', to: cardRefs.santiferIo, toEdge: 'top' },
-                  { from: cardRefs.santiferIo, fromEdge: 'bottom', to: cardRefs.selfHealingChatbot, toEdge: 'top' },
-                  { from: cardRefs.selfHealingChatbot, fromEdge: 'bottom', to: cardRefs.claudeEye, toEdge: 'top' },
-                  { from: cardRefs.claudeEye, fromEdge: 'bottom', to: cardRefs.claudeable, toEdge: 'top' },
-                  { from: cardRefs.claudeable, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
-                  { from: cardRefs.claudePulse, fromEdge: 'bottom', to: cardRefs.contentDigest, toEdge: 'top' },
-                ] : [
-                  // Desktop: grafo complejo
-                  // Fila 1: Life OS ↔ Career Ops (horizontal)
-                  { from: cardRefs.lifeOS, fromEdge: 'right', to: cardRefs.careerOps, toEdge: 'left' },
-                  // Row 1 -> Row 2: diagonals toward portfolio + chatbot
-                  { from: cardRefs.lifeOS, fromEdge: 'bottom', to: cardRefs.santiferIo, toEdge: 'top' },
                   { from: cardRefs.careerOps, fromEdge: 'bottom', to: cardRefs.selfHealingChatbot, toEdge: 'top' },
-                  // Row 2: portfolio <-> chatbot (horizontal)
-                  { from: cardRefs.santiferIo, fromEdge: 'right', to: cardRefs.selfHealingChatbot, toEdge: 'left' },
-                  // Fila 2 → Fila 3: hacia tools
-                  { from: cardRefs.santiferIo, fromEdge: 'bottom', to: cardRefs.claudeEye, toEdge: 'top' },
+                  { from: cardRefs.selfHealingChatbot, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
+                  { from: cardRefs.claudePulse, fromEdge: 'bottom', to: cardRefs.claudeable, toEdge: 'top' },
+                ] : [
+                  { from: cardRefs.contentDigest, fromEdge: 'right', to: cardRefs.lifeOS, toEdge: 'left' },
+                  { from: cardRefs.contentDigest, fromEdge: 'bottom', to: cardRefs.careerOps, toEdge: 'top' },
+                  { from: cardRefs.lifeOS, fromEdge: 'bottom', to: cardRefs.selfHealingChatbot, toEdge: 'top' },
+                  { from: cardRefs.careerOps, fromEdge: 'right', to: cardRefs.selfHealingChatbot, toEdge: 'left' },
+                  { from: cardRefs.careerOps, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
                   { from: cardRefs.selfHealingChatbot, fromEdge: 'bottom', to: cardRefs.claudeable, toEdge: 'top' },
-                  // Fila 3 → Fila 4
-                  { from: cardRefs.claudeEye, fromEdge: 'bottom', to: cardRefs.claudePulse, toEdge: 'top' },
-                  { from: cardRefs.claudeable, fromEdge: 'bottom', to: cardRefs.contentDigest, toEdge: 'top' },
                 ]
 
                 const paths = connections.map(conn => {
@@ -1918,30 +1898,43 @@ function App() {
                   </p>
                   {project.subprojects && (
                     <div className="grid gap-2 mb-4">
-                      {project.subprojects.map((subproject) => (
-                        <div
-                          key={subproject.name}
-                          className="rounded-lg border border-border/70 bg-background/45 px-3 py-2"
-                        >
-                          <div className="flex items-center justify-between gap-3">
-                            <p className="text-sm font-semibold text-foreground">{subproject.name}</p>
-                            {subproject.link && (
-                              <a
-                                href={externalHref(subproject.link)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${subproject.name} landing page`}
-                                className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-primary hover:bg-primary/10 transition-colors"
-                              >
-                                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                              </a>
-                            )}
-                          </div>
-                          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                            {subproject.desc}
-                          </p>
-                        </div>
-                      ))}
+                  {project.subprojects.map((subproject) => {
+                          const cardClass = 'rounded-lg border border-border/70 bg-background/45 px-3 py-2'
+                          const body = (
+                            <>
+                              <div className="flex items-center justify-between gap-3">
+                                <p className="text-sm font-semibold text-foreground">{subproject.name}</p>
+                                {subproject.link && (
+                                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-primary">
+                                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                                  </span>
+                                )}
+                              </div>
+                              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                                {subproject.desc}
+                              </p>
+                            </>
+                          )
+                          if (!subproject.link) {
+                            return (
+                              <div key={subproject.name} className={cardClass}>
+                                {body}
+                              </div>
+                            )
+                          }
+                          return (
+                            <a
+                              key={subproject.name}
+                              href={externalHref(subproject.link)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${subproject.name} landing page`}
+                              className={`${cardClass} block hover:border-primary/50 transition-colors`}
+                            >
+                              {body}
+                            </a>
+                          )
+                        })}
                     </div>
                   )}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -2029,43 +2022,33 @@ function App() {
                   ))}
                 </svg>
 
-                {/* Fila 1: Life OS + Career Ops */}
+                {/* Row 1: Argus + Relampo */}
                 <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
                   <AnimatedSection delay={0.1}>
-                    <ProjectCard project={lifeOS} cardRef={cardRefs.lifeOS} />
+                    <ProjectCard project={contentDigest} cardRef={cardRefs.contentDigest} />
                   </AnimatedSection>
                   <AnimatedSection delay={0.15}>
-                    <ProjectCard project={careerOps} cardRef={cardRefs.careerOps} />
+                    <ProjectCard project={lifeOS} cardRef={cardRefs.lifeOS} />
                   </AnimatedSection>
                 </div>
 
-                {/* Row 2: portfolio + Self-Healing Chatbot (highlight) */}
+                {/* Row 2: SkillMil + Diagnostic */}
                 <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
                   <AnimatedSection delay={0.2}>
-                    <ProjectCard project={santiferIo} variant="highlight" cardRef={cardRefs.santiferIo} />
+                    <ProjectCard project={careerOps} cardRef={cardRefs.careerOps} />
                   </AnimatedSection>
                   <AnimatedSection delay={0.25}>
                     <ProjectCard project={selfHealingChatbot} variant="highlight" cardRef={cardRefs.selfHealingChatbot} />
                   </AnimatedSection>
                 </div>
 
-                {/* Fila 3: Claude Eye + Claudeable — tools */}
+                {/* Row 3: Costa Farms + Esencial Energy */}
                 <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
-                  <AnimatedSection delay={0.25}>
-                    <ProjectCard project={claudeEye} variant="tool-static" cardRef={cardRefs.claudeEye} />
-                  </AnimatedSection>
                   <AnimatedSection delay={0.3}>
-                    <ProjectCard project={claudeable} variant="tool-static" cardRef={cardRefs.claudeable} />
-                  </AnimatedSection>
-                </div>
-
-                {/* Fila 4: Claude Pulse + Content Digest */}
-                <div className="grid md:grid-cols-2 gap-6 mb-6 relative z-10">
-                  <AnimatedSection delay={0.35}>
                     <ProjectCard project={claudePulse} variant="tool-static" cardRef={cardRefs.claudePulse} />
                   </AnimatedSection>
-                  <AnimatedSection delay={0.4}>
-                    <ProjectCard project={contentDigest} cardRef={cardRefs.contentDigest} />
+                  <AnimatedSection delay={0.35}>
+                    <ProjectCard project={claudeable} variant="tool-static" cardRef={cardRefs.claudeable} />
                   </AnimatedSection>
                 </div>
               </div>

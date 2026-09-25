@@ -208,14 +208,6 @@ export const translations = {
           link: 'skillmil.com',
         },
         {
-          title: 'Angel Portfolio',
-          badge: 'Este Portfolio',
-          badgeBuilding: '',
-          desc: 'Portfolio React/Vite adaptado para presentar experiencia full-stack, cloud engineering, proyectos profesionales, stack técnico y contacto.',
-          tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
-          link: '',
-        },
-        {
           title: 'Diagnostic Workflow Tools',
           badge: 'Targeted Bioscience',
           badgeBuilding: '',
@@ -232,16 +224,6 @@ export const translations = {
           link: '',
           isDependency: true,
           dependencyRole: 'monitoring',
-        },
-        {
-          title: 'Cloud Backend Work',
-          badge: 'Biprintzble / Evemundo',
-          badgeBuilding: '',
-          desc: 'Backend y cloud engineering con Python, DynamoDB, AWS architecture planning y soporte a productos remotos en equipos internacionales.',
-          tech: ['Python', 'DynamoDB', 'AWS', 'Backend'],
-          link: '',
-          isDependency: true,
-          dependencyRole: 'animations',
         },
         {
           title: 'Internal Operations Systems',
@@ -696,14 +678,6 @@ export const translations = {
           link: 'skillmil.com',
         },
         {
-          title: 'Angel Portfolio',
-          badge: 'This Portfolio',
-          badgeBuilding: '',
-          desc: 'React/Vite portfolio adapted to present full-stack experience, cloud engineering work, professional projects, technical stack, and contact details.',
-          tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
-          link: '',
-        },
-        {
           title: 'Diagnostic Workflow Tools',
           badge: 'Targeted Bioscience',
           badgeBuilding: '',
@@ -720,16 +694,6 @@ export const translations = {
           link: '',
           isDependency: true,
           dependencyRole: 'monitoring',
-        },
-        {
-          title: 'Cloud Backend Work',
-          badge: 'Biprintzble / Evemundo',
-          badgeBuilding: '',
-          desc: 'Backend and cloud engineering with Python, DynamoDB, AWS architecture planning, and support for remote product work in international teams.',
-          tech: ['Python', 'DynamoDB', 'AWS', 'Backend'],
-          link: '',
-          isDependency: true,
-          dependencyRole: 'animations',
         },
         {
           title: 'Internal Operations Systems',
